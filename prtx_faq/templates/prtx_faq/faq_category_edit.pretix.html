@@ -1,0 +1,12 @@
+{% extends "pretixcontrol/event/base.html" %}
+{% load bootstrap3 %}
+{% load i18n %}
+
+{% block content %}
+<h2>{% trans "Update Category" %}</h2>
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form layout='control' %}
+    <button type="submit" class="btn btn-success">{% trans "Save" %}</button>
+</form>
+{% endblock %}

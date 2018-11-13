@@ -19,7 +19,7 @@ class FAQList(ListView):
     template_name = 'prtx_faq/faq_list.{}.html'.format(PRTX)
 
 
-class FAQCreate(FormView):  # TODO
+class FAQCreate(FormView):
     template_name = 'prtx_faq/faq_create.{}.html'.format(PRTX)
     form_class = FAQForm
 
@@ -109,9 +109,22 @@ class FAQCategoryCreate(FormView):
         return kwargs
 
 
-class FAQCategoryEdit(UpdateView):  # TODO
+class FAQCategoryEdit(UpdateView):
     model = FAQCategory
     template_name = 'prtx_faq/faq_category_edit.{}.html'.format(PRTX)
+    form_class = FAQCategoryForm
+
+    def get_success_url(self):
+        kwargs = {'event': self.request.event.slug}
+        if PRTX == 'pretix':
+            kwargs['organizer'] = self.request.organizer.slug
+        messages.success(self.request, _('Category saved!'))
+        return reverse('plugins:prtx_faq:faq.category.list', kwargs=kwargs)
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['event'] = self.request.event
+        return kwargs
 
 
 class FAQCategoryDelete(DeleteView):  # TODO

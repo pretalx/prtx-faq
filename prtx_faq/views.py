@@ -50,12 +50,36 @@ class FAQDelete(DeleteView):  # TODO
     template_name = 'prtx_faq/faq_delete.{}.html'.format(PRTX)
 
 
-def faq_up(request, *args, **kwargs):  # TODO
-    pass
+def faq_move(request, pk, up=True):
+    try:
+        question = FAQ.objects.get(category__event=request.event, pk=pk)
+    except FAQ.DoesNotExist:
+        raise Http404(_('The selected question does not exist.'))
+    questions = list(FAQ.objects.filter(category=question.category).order_by('position'))
+
+    index = questions.index(question)
+    if index != 0 and up:
+        questions[index - 1], questions[index] = questions[index], questions[index - 1]
+    elif index != len(questions) - 1 and not up:
+        questions[index + 1], questions[index] = questions[index], questions[index + 1]
+
+    for i, qst in enumerate(questions):
+        if qst.position != i:
+            qst.position = i
+            qst.save()
+    messages.success(request, _('The order of questions has been updated.'))
+    kwargs = {'event': request.event.slug}
+    if PRTX == 'pretix':
+        kwargs['organizer'] = request.organizer.slug
+    return reverse('plugins:prtx_faq:faq.list', kwargs=kwargs)
 
 
-def faq_down(request, *args, **kwargs):  # TODO
-    pass
+def faq_up(request, **kwargs):
+    return redirect(faq_move(request, kwargs.get('pk'), up=True))
+
+
+def faq_down(request, **kwargs):
+    return redirect(faq_move(request, kwargs.get('pk'), up=False))
 
 
 class FAQCategoryList(ListView):

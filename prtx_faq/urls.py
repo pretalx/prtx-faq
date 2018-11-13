@@ -9,18 +9,18 @@ from prtx_faq.prtx import PRTX
 def get_urls():
     urls = []
     data = (
-        (r'faq/', views.FAQList.as_view(), 'faq.list'),
-        (r'faq/new/', views.FAQCreate.as_view(), 'faq.create'),
-        (r'faq/(?P<pk>[0-9]+)/', views.FAQEdit.as_view(), 'faq.edit'),
-        (r'faq/(?P<pk>[0-9]+)/delete/', views.FAQDelete.as_view(), 'faq.delete'),
-        (r'faq/(?P<pk>[0-9]+)/up/', views.faq_up, 'faq.up'),
-        (r'faq/(?P<pk>[0-9]+)/down/', views.faq_down, 'faq.down'),
-        (r'faq/category/', views.FAQCategoryList.as_view(), 'faq.category.list'),
-        (r'faq/category/new/', views.FAQCategoryCreate.as_view(), 'faq.category.create'),
-        (r'faq/category/(?P<pk>[0-9]+)/', views.FAQCategoryEdit.as_view(), 'faq.category.edit'),
-        (r'faq/category/(?P<pk>[0-9]+)/delete/', views.FAQCategoryDelete.as_view(), 'faq.category.delete'),
-        (r'faq/category/(?P<pk>[0-9]+)/up/', views.faq_category_up, 'faq.category.up'),
-        (r'faq/category/(?P<pk>[0-9]+)/down/', views.faq_category_down, 'faq.category.down'),
+        (r'faq/$', views.FAQList.as_view(), 'faq.list'),
+        (r'faq/new/$', views.FAQCreate.as_view(), 'faq.create'),
+        (r'faq/(?P<pk>[0-9]+)/$', views.FAQEdit.as_view(), 'faq.edit'),
+        (r'faq/(?P<pk>[0-9]+)/delete/$', views.FAQDelete.as_view(), 'faq.delete'),
+        (r'faq/(?P<pk>[0-9]+)/up/$', views.faq_up, 'faq.up'),
+        (r'faq/(?P<pk>[0-9]+)/down/$', views.faq_down, 'faq.down'),
+        (r'faq/category/$', views.FAQCategoryList.as_view(), 'faq.category.list'),
+        (r'faq/category/new/$', views.FAQCategoryCreate.as_view(), 'faq.category.create'),
+        (r'faq/category/(?P<pk>[0-9]+)/$', views.FAQCategoryEdit.as_view(), 'faq.category.edit'),
+        (r'faq/category/(?P<pk>[0-9]+)/delete/$', views.FAQCategoryDelete.as_view(), 'faq.category.delete'),
+        (r'faq/category/(?P<pk>[0-9]+)/up/$', views.faq_category_up, 'faq.category.up'),
+        (r'faq/category/(?P<pk>[0-9]+)/down/$', views.faq_category_down, 'faq.category.down'),
     )
     if PRTX == 'pretix':
         base = r'^control/event/(?P<organizer>[^/]+)/(?P<event>[^/]+)/'

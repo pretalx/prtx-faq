@@ -1,0 +1,12 @@
+{% extends "pretixcontrol/event/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div>
+    <p class="clearfix"></p>
+    <a class="btn btn-success ml-auto" href="{% url "plugins:prtx_faq:faq.create" event=request.event.slug organizer=request.organizer.slug %}">
+        {% trans "Add question" %}
+    </a>
+</div>
+{% include "prtx_faq/faq_list.html" %}
+{% endblock %}

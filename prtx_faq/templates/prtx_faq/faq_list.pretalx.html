@@ -1,0 +1,12 @@
+{% extends "orga/base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div>
+    <a class="btn btn-success ml-auto" href="{% url "plugins:prtx_faq:faq.create" event=request.event.slug %}">
+        {% trans "Add question" %}
+    </a>
+    <p class="clearfix"></p>
+</div>
+{% include "prtx_faq/faq_list.html" %}
+{% endblock %}

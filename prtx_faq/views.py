@@ -9,8 +9,9 @@ class FAQView(TemplateView):  # TODO
     template_name = 'prtx_faq/faq.{}.html'.format(PRTX)
 
 
-class FAQList(ListView):  # TODO
+class FAQList(ListView):
     model = FAQ
+    context_object_name = 'questions'
     template_name = 'prtx_faq/faq_list.{}.html'.format(PRTX)
 
 

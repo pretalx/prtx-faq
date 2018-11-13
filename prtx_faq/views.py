@@ -1,3 +1,6 @@
+from django.contrib import messages
+from django.urls import reverse
+from django.utils.translation import ugettext_lazy as _
 from django.views.generic import ListView, DeleteView, FormView, UpdateView, TemplateView
 
 from prtx_faq.models import FAQ, FAQCategory
@@ -43,8 +46,25 @@ class FAQCategoryList(ListView):
     template_name = 'prtx_faq/faq_category_list.{}.html'.format(PRTX)
 
 
-class FAQCategoryCreate(FormView):  # TODO
+class FAQCategoryCreate(FormView):
     template_name = 'prtx_faq/faq_category_create.{}.html'.format(PRTX)
+    form_class = FAQCategoryForm
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        kwargs = {'event': self.request.event.slug}
+        if PRTX == 'pretix':
+            kwargs['organizer'] = self.request.organizer.slug
+        messages.success(self.request, _('Category created!'))
+        return reverse('plugins:prtx_faq:faq.category.list', kwargs=kwargs)
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['event'] = self.request.event
+        return kwargs
 
 
 class FAQCategoryEdit(UpdateView):  # TODO

@@ -1,0 +1,12 @@
+{% extends "orga/base.html" %}
+{% load bootstrap4 %}
+{% load i18n %}
+
+{% block content %}
+<h2>{% trans "New Category" %}</h2>
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form layout='event' %}
+    <button type="submit" class="btn btn-success offset-3">{% trans "Save" %}</button>
+</form>
+{% endblock %}

@@ -1,0 +1,3 @@
+recursive-include prtx_faq/static *
+recursive-include prtx_faq/templates *
+recursive-include prtx_faq/locale *

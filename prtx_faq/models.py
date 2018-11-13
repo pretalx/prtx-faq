@@ -23,4 +23,4 @@ class FAQ(models.Model):
     position = models.PositiveIntegerField(verbose_name=_('Position'))
 
     class Meta:
-        ordering = ('position', 'id')
+        ordering = ('category__position', 'position', 'id')

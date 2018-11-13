@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('position', models.PositiveIntegerField(verbose_name='Position')),
             ],
             options={
-                'ordering': ('position', 'id'),
+                'ordering': ('category__position', 'position', 'id'),
             },
         ),
         migrations.CreateModel(

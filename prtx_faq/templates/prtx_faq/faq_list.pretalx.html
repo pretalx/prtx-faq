@@ -3,6 +3,9 @@
 
 {% block content %}
 <div>
+    <a class="btn btn-info ml-auto" href="{% url "plugins:prtx_faq:faq.category.list" event=request.event.slug %}">
+        {% trans "Show categories" %}
+    </a>
     <a class="btn btn-success ml-auto" href="{% url "plugins:prtx_faq:faq.create" event=request.event.slug %}">
         {% trans "Add question" %}
     </a>

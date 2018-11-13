@@ -37,8 +37,9 @@ def faq_down(request, *args, **kwargs):  # TODO
     pass
 
 
-class FAQCategoryList(ListView):  # TODO
+class FAQCategoryList(ListView):
     model = FAQCategory
+    context_object_name = 'categories'
     template_name = 'prtx_faq/faq_category_list.{}.html'.format(PRTX)
 
 

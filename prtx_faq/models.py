@@ -10,6 +10,9 @@ class FAQCategory(models.Model):
     name = I18nCharField(verbose_name=_('Name'))
     position = models.PositiveIntegerField(verbose_name=_('Position'))
 
+    def __str__(self):
+        return str(self.name)
+
     class Meta:
         unique_together = (('event', 'name'), )
         ordering = ('position', 'id')

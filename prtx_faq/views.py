@@ -20,6 +20,23 @@ class FAQList(ListView):
 
 class FAQCreate(FormView):  # TODO
     template_name = 'prtx_faq/faq_create.{}.html'.format(PRTX)
+    form_class = FAQForm
+
+    def get_success_url(self):
+        kwargs = {'event': self.request.event.slug}
+        if PRTX == 'pretix':
+            kwargs['organizer'] = self.request.organizer.slug
+        messages.success(self.request, _('Category created!'))
+        return reverse('plugins:prtx_faq:faq.list', kwargs=kwargs)
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
+
+    def get_form_kwargs(self):
+        kwargs = super().get_form_kwargs()
+        kwargs['event'] = self.request.event
+        return kwargs
 
 
 class FAQEdit(UpdateView):  # TODO

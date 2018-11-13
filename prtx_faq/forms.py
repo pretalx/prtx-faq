@@ -1,6 +1,5 @@
 from django import forms
 from i18nfield.forms import I18nModelForm
-
 from prtx_faq.models import FAQ, FAQCategory
 from prtx_faq.prtx import PRTX
 

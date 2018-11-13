@@ -2,10 +2,11 @@ from django.contrib import messages
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
-from django.views.generic import ListView, DeleteView, FormView, UpdateView, TemplateView
-
-from prtx_faq.models import FAQ, FAQCategory
+from django.views.generic import (
+    DeleteView, FormView, ListView, TemplateView, UpdateView,
+)
 from prtx_faq.forms import FAQCategoryForm, FAQForm
+from prtx_faq.models import FAQ, FAQCategory
 from prtx_faq.prtx import PRTX
 
 

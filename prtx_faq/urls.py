@@ -1,9 +1,9 @@
 from contextlib import suppress
 
 from django.conf.urls import url
+from prtx_faq.prtx import PRTX
 
 from . import views
-from prtx_faq.prtx import PRTX
 
 
 def get_urls():

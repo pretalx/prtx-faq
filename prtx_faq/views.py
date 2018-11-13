@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.views.generic import ListView, DeleteView, FormView, UpdateView, TemplateView
@@ -94,9 +95,33 @@ class FAQCategoryDelete(DeleteView):  # TODO
     template_name = 'prtx_faq/faq_category_delete.{}.html'.format(PRTX)
 
 
-def faq_category_up(request, *args, **kwargs):  # TODO
-    pass
+def faq_category_move(request, pk, up=True):
+    try:
+        category = request.event.faq_categories.get(pk=pk)
+    except FAQCategory.DoesNotExist:
+        raise Http404(_('The selected category does not exist.'))
+    categories = list(request.event.faq_categories.order_by('position'))
+
+    index = categories.index(category)
+    if index != 0 and up:
+        categories[index - 1], categories[index] = categories[index], categories[index - 1]
+    elif index != len(categories) - 1 and not up:
+        categories[index + 1], categories[index] = categories[index], categories[index + 1]
+
+    for i, cat in enumerate(categories):
+        if cat.position != i:
+            cat.position = i
+            cat.save()
+    messages.success(request, _('The order of categories has been updated.'))
+    kwargs = {'event': request.event.slug}
+    if PRTX == 'pretix':
+        kwargs['organizer'] = request.organizer.slug
+    return reverse('plugins:prtx_faq:faq.category.list', kwargs=kwargs)
 
 
-def faq_category_down(request, *args, **kwargs):  # TODO
-    pass
+def faq_category_up(request, **kwargs):
+    return redirect(faq_category_move(request, kwargs.get('pk'), up=True))
+
+
+def faq_category_down(request, **kwargs):
+    return redirect(faq_category_move(request, kwargs.get('pk'), up=False))

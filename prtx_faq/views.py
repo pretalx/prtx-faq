@@ -19,6 +19,9 @@ class FAQList(ListView):
     context_object_name = 'questions'
     template_name = 'prtx_faq/faq_list.{}.html'.format(PRTX)
 
+    def get_queryset(self):
+        return FAQ.objects.filter(category__event=self.request.event).order_by('category__position', 'position', 'pk')
+
 
 class FAQCreate(FormView):
     template_name = 'prtx_faq/faq_create.{}.html'.format(PRTX)
@@ -112,6 +115,9 @@ class FAQCategoryList(ListView):
     model = FAQCategory
     context_object_name = 'categories'
     template_name = 'prtx_faq/faq_category_list.{}.html'.format(PRTX)
+
+    def get_queryset(self):
+        return self.request.event.faq_categories.all().order_by('position', 'pk')
 
 
 class FAQCategoryCreate(FormView):

@@ -8,7 +8,9 @@
 <input id="faqSearch" class="form-control" type="text" placeholder="{% trans "Search" %}">
 {% for category in categories %}
 <section>
+    {% if category.questions.exists %}
     <h2>{{ category }}</h2>
+    {% endif %}
     {% for question in category.questions.all %}
     <div class="question" id="q-{{ question.id }}">
         <div class="question-asked">{{ question.question|rich_text }}</div>

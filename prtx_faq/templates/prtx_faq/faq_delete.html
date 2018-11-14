@@ -1,0 +1,11 @@
+{% load i18n %}
+<h1>{% trans "Delete question?" %}</h1>
+<form action="" method="post" class="form-horizontal">
+    {% csrf_token %}
+    <p>{% blocktrans %}Are you sure you want to delete the question <strong>{{ question }}</strong>?{% endblocktrans %}</p>
+    <div class="form-group submit-group">
+        <button type="submit" class="btn btn-danger btn-save">
+            {% trans "Delete" %}
+        </button>
+    </div>
+</form>

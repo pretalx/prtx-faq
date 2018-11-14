@@ -59,9 +59,21 @@ class FAQEdit(UpdateView):
         return kwargs
 
 
-class FAQDelete(DeleteView):  # TODO
+class FAQDelete(DeleteView):
     model = FAQ
     template_name = 'prtx_faq/faq_delete.{}.html'.format(PRTX)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['question'] = FAQ.objects.get(category__event=self.request.event, pk=self.kwargs['pk'])
+        return context
+
+    def get_success_url(self):
+        kwargs = {'event': self.request.event.slug}
+        if PRTX == 'pretix':
+            kwargs['organizer'] = self.request.organizer.slug
+        messages.success(self.request, _('Question deleted!'))
+        return reverse('plugins:prtx_faq:faq.list', kwargs=kwargs)
 
 
 def faq_move(request, pk, up=True):
@@ -141,9 +153,21 @@ class FAQCategoryEdit(UpdateView):
         return kwargs
 
 
-class FAQCategoryDelete(DeleteView):  # TODO
+class FAQCategoryDelete(DeleteView):
     model = FAQCategory
     template_name = 'prtx_faq/faq_category_delete.{}.html'.format(PRTX)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category'] = self.request.event.faq_categories.get(pk=self.kwargs['pk'])
+        return context
+
+    def get_success_url(self):
+        kwargs = {'event': self.request.event.slug}
+        if PRTX == 'pretix':
+            kwargs['organizer'] = self.request.organizer.slug
+        messages.success(self.request, _('Category deleted!'))
+        return reverse('plugins:prtx_faq:faq.category.list', kwargs=kwargs)
 
 
 def faq_category_move(request, pk, up=True):

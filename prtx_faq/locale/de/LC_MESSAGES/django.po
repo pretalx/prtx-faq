@@ -79,7 +79,7 @@ msgstr "Kategorie löschen?"
 msgid ""
 "Are you sure you want to delete the category <strong>%(category)s</strong>?"
 msgstr ""
-"Willst du wirklich die Kategorie <strong>%(category)s</strong> wirklich "
+"Wollen Sie wirklich die Kategorie <strong>%(category)s</strong> wirklich "
 "löschen?"
 
 #: prtx_faq/templates/prtx_faq/faq_category_delete.html:8
@@ -111,7 +111,7 @@ msgstr "Frage löschen?"
 #, python-format
 msgid ""
 "Are you sure you want to delete the question <strong>%(question)s</strong>?"
-msgstr "Willst du die Frage <strong>%(question)s</strong> wirklich löschen?"
+msgstr "Wollen Sie die Frage <strong>%(question)s</strong> wirklich löschen?"
 
 #: prtx_faq/templates/prtx_faq/faq_edit.pretix.html:6
 msgid "Update Question"

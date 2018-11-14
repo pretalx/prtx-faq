@@ -1,0 +1,164 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-14 23:50+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Tobias Kunze <r@rixx.de>\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+
+#: prtx_faq/__init__.py:10 prtx_faq/__init__.py:17
+#: prtx_faq/templates/prtx_faq/faq.html:6
+msgid "Frequently Asked Questions"
+msgstr "Häufige Fragen und Antworten"
+
+#: prtx_faq/__init__.py:12 prtx_faq/__init__.py:19
+msgid "An FAQ plugin for pretalx and pretix"
+msgstr "Ein FAQ-Plugin für pretix und pretalx"
+
+#: prtx_faq/models.py:9
+msgid "Name"
+msgstr "Name"
+
+#: prtx_faq/models.py:10 prtx_faq/models.py:25
+msgid "Position"
+msgstr "Position"
+
+#: prtx_faq/models.py:21 prtx_faq/templates/prtx_faq/faq_category_list.html:4
+#: prtx_faq/templates/prtx_faq/faq_list.html:5
+msgid "Category"
+msgstr "Kategorie"
+
+#: prtx_faq/models.py:22 prtx_faq/templates/prtx_faq/faq_list.html:4
+msgid "Question"
+msgstr "Frage"
+
+#: prtx_faq/models.py:23
+msgid "Answer"
+msgstr "Antwort"
+
+#: prtx_faq/models.py:24
+msgid "Tags"
+msgstr "Tags"
+
+#: prtx_faq/signals.py:19
+msgid "FAQ"
+msgstr "FAQ"
+
+#: prtx_faq/templates/prtx_faq/faq.html:8
+msgid "Search"
+msgstr "Suche"
+
+#: prtx_faq/templates/prtx_faq/faq_category_create.pretalx.html:6
+#: prtx_faq/templates/prtx_faq/faq_category_create.pretix.html:6
+msgid "New Category"
+msgstr "Neue Kategorie"
+
+#: prtx_faq/templates/prtx_faq/faq_category_create.pretalx.html:10
+#: prtx_faq/templates/prtx_faq/faq_category_create.pretix.html:10
+#: prtx_faq/templates/prtx_faq/faq_category_edit.pretalx.html:10
+#: prtx_faq/templates/prtx_faq/faq_category_edit.pretix.html:10
+#: prtx_faq/templates/prtx_faq/faq_create.pretalx.html:10
+#: prtx_faq/templates/prtx_faq/faq_create.pretix.html:10
+#: prtx_faq/templates/prtx_faq/faq_edit.pretalx.html:10
+#: prtx_faq/templates/prtx_faq/faq_edit.pretix.html:10
+msgid "Save"
+msgstr "Speichern"
+
+#: prtx_faq/templates/prtx_faq/faq_category_delete.html:2
+msgid "Delete category?"
+msgstr "Kategorie löschen?"
+
+#: prtx_faq/templates/prtx_faq/faq_category_delete.html:5
+#, python-format
+msgid "Are you sure you want to delete the category <strong>%(category)s</strong>?"
+msgstr "Willst du wirklich die Kategorie <strong>%(category)s</strong> wirklich löschen?"
+
+#: prtx_faq/templates/prtx_faq/faq_category_delete.html:8
+#: prtx_faq/templates/prtx_faq/faq_delete.html:8
+msgid "Delete"
+msgstr "Löschen"
+
+#: prtx_faq/templates/prtx_faq/faq_category_edit.pretalx.html:6
+#: prtx_faq/templates/prtx_faq/faq_category_edit.pretix.html:6
+#: prtx_faq/templates/prtx_faq/faq_edit.pretalx.html:6
+msgid "Update Category"
+msgstr "Kategorie bearbeiten"
+
+#: prtx_faq/templates/prtx_faq/faq_category_list.pretalx.html:7
+#: prtx_faq/templates/prtx_faq/faq_category_list.pretix.html:8
+msgid "Add category"
+msgstr "Kategorie erstellen"
+
+#: prtx_faq/templates/prtx_faq/faq_create.pretalx.html:6
+#: prtx_faq/templates/prtx_faq/faq_create.pretix.html:6
+msgid "New Question"
+msgstr "Neue Frage"
+
+#: prtx_faq/templates/prtx_faq/faq_delete.html:2
+msgid "Delete question?"
+msgstr "Frage löschen?"
+
+#: prtx_faq/templates/prtx_faq/faq_delete.html:5
+#, python-format
+msgid "Are you sure you want to delete the question <strong>%(question)s</strong>?"
+msgstr "Willst du die Frage <strong>%(question)s</strong> wirklich löschen?"
+
+#: prtx_faq/templates/prtx_faq/faq_edit.pretix.html:6
+msgid "Update Question"
+msgstr "Frage bearbeiten"
+
+#: prtx_faq/templates/prtx_faq/faq_list.pretalx.html:7
+#: prtx_faq/templates/prtx_faq/faq_list.pretix.html:8
+msgid "Show categories"
+msgstr "Kategorien anzeigen"
+
+#: prtx_faq/templates/prtx_faq/faq_list.pretalx.html:10
+#: prtx_faq/templates/prtx_faq/faq_list.pretix.html:11
+msgid "Add question"
+msgstr "Frage hinzufügen"
+
+#: prtx_faq/views.py:41
+msgid "Question created!"
+msgstr "Die Frage wurde erstellt!"
+
+#: prtx_faq/views.py:63
+msgid "Question saved!"
+msgstr "Die Frage wurde gespeichert."
+
+#: prtx_faq/views.py:85
+msgid "Question deleted!"
+msgstr "Die Frage wurde gelöscht."
+
+#: prtx_faq/views.py:93
+msgid "The selected question does not exist."
+msgstr "Die gewählte Frage gibt es nicht."
+
+#: prtx_faq/views.py:106
+msgid "The order of questions has been updated."
+msgstr "Die Fragenreihenfolge wurde geändert."
+
+#: prtx_faq/views.py:142
+msgid "Category created!"
+msgstr "Die Kategorie wurde erstellt."
+
+#: prtx_faq/views.py:160
+msgid "Category saved!"
+msgstr "Die Kategorie wurde gespeichert."
+
+#: prtx_faq/views.py:182
+msgid "Category deleted!"
+msgstr "Die Kategorie wurde gelöscht."
+
+#: prtx_faq/views.py:190
+msgid "The selected category does not exist."
+msgstr "Die gewählte Kategorie gibt es nicht."
+
+#: prtx_faq/views.py:203
+msgid "The order of categories has been updated."
+msgstr "Die Reihenfolge der Kategorien wurde geändert."

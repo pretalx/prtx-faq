@@ -10,8 +10,15 @@ from prtx_faq.models import FAQ, FAQCategory
 from prtx_faq.prtx import PRTX
 
 
-class FAQView(TemplateView):  # TODO
+class FAQView(TemplateView):
     template_name = 'prtx_faq/faq.{}.html'.format(PRTX)
+
+    def get_context_data(self, *args, **kwargs):
+        ctx = super().get_context_data(*args, **kwargs)
+        ctx['categories'] = self.request.event.faq_categories.all()
+        ctx['event'] = self.request.event
+        ctx['organizer'] = getattr(self.request, 'organizer', None)
+        return ctx
 
 
 class FAQList(ListView):

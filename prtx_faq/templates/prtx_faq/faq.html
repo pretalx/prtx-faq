@@ -1,0 +1,19 @@
+{% load i18n %}
+{% load rich_text %}
+{% load static %}
+<script src="{% static "prtx_faq/faq_search.js" %}"></script>
+
+<h1>{% trans "Frequently Asked Questions" %}</h1>
+
+<input id="faqSearch" class="form-control" type="text" placeholder="{% trans "Search" %}">
+{% for category in categories %}
+<section>
+    <h2>{{ category }}</h2>
+    {% for question in category.questions.all %}
+    <div class="question" id="q-{{ question.id }}">
+        <div class="question-asked">{{ question.question|rich_text }}</div>
+        <div class="question-answered">{{ question.answer|rich_text }}</div>
+    </div>
+    {% endfor %}
+</section>
+{% endfor %}

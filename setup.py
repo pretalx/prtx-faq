@@ -25,7 +25,7 @@ cmdclass = {
 
 setup(
     name='prtx-faq',
-    version='1.0.0',
+    version='0.9.0',
     description='An FAQ plugin for pretalx and pretix',
     long_description=long_description,
     url='https://github.com/pretalx/prtx-faq',

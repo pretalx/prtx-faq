@@ -32,12 +32,14 @@ def get_urls():
         for entry in data:
             urls.append(url(base + entry[0], entry[1], name=entry[2]))
         urls.append(
-            url(r'^(?P<event>[^/]+)faq/$', views.FAQView.as_view(), name='faq'),
+            url(r'^(?P<event>[^/]+)/faq/$', views.FAQView.as_view(), name='faq'),
         )
     return urls
 
 urlpatterns = get_urls()
 
-event_patterns = [
-    url(r'^faq/$', views.FAQView.as_view(), name='faq'),
-]
+if PRTX == 'pretix':
+    from pretix.multidomain import event_url
+    event_patterns = [
+        event_url(r'^faq/$', views.FAQView.as_view(), name='faq'),
+    ]

@@ -1,0 +1,24 @@
+#faqSearch {
+    float: right;
+    width: 300px;
+}
+
+.question {
+}
+
+.panel {
+    margin-bottom: 20px;
+    p {
+        margin-bottom: 10px;
+    }
+    .card-header, .list-group-item {
+        padding: 10px 15px;
+    }
+    .panel-title {
+        font-size: 16px;
+    }
+}
+
+.question-asked {
+    font-weight: bold;
+}

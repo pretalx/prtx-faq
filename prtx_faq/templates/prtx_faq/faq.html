@@ -3,19 +3,24 @@
 {% load static %}
 <script src="{% static "prtx_faq/faq_search.js" %}"></script>
 
+<input id="faqSearch" class="form-control" type="text" placeholder="{% trans "Search" %}">
+
 <h1>{% trans "Frequently Asked Questions" %}</h1>
 
-<input id="faqSearch" class="form-control" type="text" placeholder="{% trans "Search" %}">
 {% for category in categories %}
-<section>
-    {% if category.questions.exists %}
-    <h2>{{ category }}</h2>
-    {% endif %}
-    {% for question in category.questions.all %}
-    <div class="question" id="q-{{ question.id }}">
-        <div class="question-asked">{{ question.question|rich_text }}</div>
-        <div class="question-answered">{{ question.answer|rich_text }}</div>
+{% if category.questions.exists %}
+<section class="panel panel-default card question-category">
+    <div class="panel-heading card-header">
+        <div class="panel-title">{{ category }}</div>
     </div>
+    <ul class="list-group" id="q-{{ question.id }}">
+    {% for question in category.questions.all %}
+        <li class="question list-group-item">
+            <div class="question-asked">{{ question.question|rich_text }}</div>
+            <div class="question-answered">{{ question.answer|rich_text }}</div>
+        </li>
     {% endfor %}
+    </ul>
 </section>
+{% endif %}
 {% endfor %}

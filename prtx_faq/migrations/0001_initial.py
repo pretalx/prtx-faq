@@ -32,7 +32,7 @@ class Migration(migrations.Migration):
             name='FAQCategory',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', i18nfield.fields.I18nCharField(verbose_name='Name'), max_length=180),
+                ('name', i18nfield.fields.I18nCharField(verbose_name='Name', max_length=180)),
                 ('position', models.PositiveIntegerField(verbose_name='Position')),
                 ('event', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='faq_categories', to='event.Event' if PRTX == 'pretalx' else 'pretixbase.Event')),
             ],

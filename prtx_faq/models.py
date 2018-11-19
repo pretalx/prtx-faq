@@ -6,7 +6,7 @@ from prtx_faq.prtx import PRTX
 
 class FAQCategory(models.Model):
     event = models.ForeignKey(to='pretixbase.Event' if PRTX == 'pretix' else 'event.Event', on_delete=models.CASCADE, related_name='faq_categories')
-    name = I18nCharField(verbose_name=_('Name'))
+    name = I18nCharField(verbose_name=_('Name'), max_length=180)
     position = models.PositiveIntegerField(verbose_name=_('Position'))
 
     def __str__(self):

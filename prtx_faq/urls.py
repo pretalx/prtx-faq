@@ -1,5 +1,3 @@
-from contextlib import suppress
-
 from django.conf.urls import url
 from prtx_faq.prtx import PRTX
 
@@ -35,6 +33,7 @@ def get_urls():
             url(r'^(?P<event>[^/]+)/faq/$', views.FAQView.as_view(), name='faq'),
         )
     return urls
+
 
 urlpatterns = get_urls()
 

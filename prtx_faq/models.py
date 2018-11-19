@@ -13,7 +13,6 @@ class FAQCategory(models.Model):
         return str(self.name)
 
     class Meta:
-        unique_together = (('event', 'name'), )
         ordering = ('position', 'id')
 
 

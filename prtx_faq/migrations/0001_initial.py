@@ -45,8 +45,4 @@ class Migration(migrations.Migration):
             name='category',
             field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='questions', to='prtx_faq.FAQCategory', verbose_name='Category'),
         ),
-        migrations.AlterUniqueTogether(
-            name='faqcategory',
-            unique_together={('event', 'name')},
-        ),
     ]

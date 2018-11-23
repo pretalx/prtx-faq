@@ -17,7 +17,7 @@
     {% for question in category.questions.all %}
         <li class="question list-group-item">
             <div id="faq-{{ question.id }}" class="question-asked">
-                {{ question.question|rich_text }}
+                {{ question.question }}
                 <a href="#faq-{{ question.id }}">¶</a>
             </div>
             <div class="question-answered">{{ question.answer|rich_text }}</div>

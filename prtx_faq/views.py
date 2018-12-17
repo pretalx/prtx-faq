@@ -11,6 +11,20 @@ from prtx_faq.models import FAQ, FAQCategory
 from prtx_faq.prtx import PRTX
 
 
+if PRTX == 'pretix':
+    from pretix.control.permissions import EventPermissionRequiredMixin, event_permission_required
+
+
+    class PermMixin(EventPermissionRequiredMixin):
+        permission = 'can_change_event_settings'
+
+    perm_annotation = event_permission_required('can_change_event_settings')
+else:
+    class PermMixin:
+        pass
+    perm_annotation = lambda f: f
+
+
 class FAQView(TemplateView):
     template_name = 'prtx_faq/faq.{}.html'.format(PRTX)
 
@@ -22,7 +36,7 @@ class FAQView(TemplateView):
         return ctx
 
 
-class FAQList(ListView):
+class FAQList(PermMixin, ListView):
     model = FAQ
     context_object_name = 'questions'
     template_name = 'prtx_faq/faq_list.{}.html'.format(PRTX)
@@ -31,7 +45,7 @@ class FAQList(ListView):
         return FAQ.objects.filter(category__event=self.request.event).order_by('category__position', 'position', 'pk')
 
 
-class FAQCreate(FormView):
+class FAQCreate(PermMixin, FormView):
     template_name = 'prtx_faq/faq_create.{}.html'.format(PRTX)
     form_class = FAQForm
 
@@ -52,7 +66,7 @@ class FAQCreate(FormView):
         return kwargs
 
 
-class FAQEdit(UpdateView):
+class FAQEdit(PermMixin, UpdateView):
     model = FAQ
     template_name = 'prtx_faq/faq_edit.{}.html'.format(PRTX)
     form_class = FAQForm
@@ -70,7 +84,7 @@ class FAQEdit(UpdateView):
         return kwargs
 
 
-class FAQDelete(DeleteView):
+class FAQDelete(PermMixin, DeleteView):
     model = FAQ
     template_name = 'prtx_faq/faq_delete.{}.html'.format(PRTX)
 
@@ -111,15 +125,17 @@ def faq_move(request, pk, up=True):
     return reverse('plugins:prtx_faq:faq.list', kwargs=kwargs)
 
 
+@perm_annotation
 def faq_up(request, **kwargs):
     return redirect(faq_move(request, kwargs.get('pk'), up=True))
 
 
+@perm_annotation
 def faq_down(request, **kwargs):
     return redirect(faq_move(request, kwargs.get('pk'), up=False))
 
 
-class FAQCategoryList(ListView):
+class FAQCategoryList(PermMixin, ListView):
     model = FAQCategory
     context_object_name = 'categories'
     template_name = 'prtx_faq/faq_category_list.{}.html'.format(PRTX)
@@ -128,7 +144,7 @@ class FAQCategoryList(ListView):
         return self.request.event.faq_categories.all().order_by('position', 'pk')
 
 
-class FAQCategoryCreate(FormView):
+class FAQCategoryCreate(PermMixin, FormView):
     template_name = 'prtx_faq/faq_category_create.{}.html'.format(PRTX)
     form_class = FAQCategoryForm
 
@@ -149,7 +165,7 @@ class FAQCategoryCreate(FormView):
         return kwargs
 
 
-class FAQCategoryEdit(UpdateView):
+class FAQCategoryEdit(PermMixin, UpdateView):
     model = FAQCategory
     template_name = 'prtx_faq/faq_category_edit.{}.html'.format(PRTX)
     form_class = FAQCategoryForm
@@ -167,7 +183,7 @@ class FAQCategoryEdit(UpdateView):
         return kwargs
 
 
-class FAQCategoryDelete(DeleteView):
+class FAQCategoryDelete(PermMixin, DeleteView):
     model = FAQCategory
     template_name = 'prtx_faq/faq_category_delete.{}.html'.format(PRTX)
 
@@ -208,9 +224,11 @@ def faq_category_move(request, pk, up=True):
     return reverse('plugins:prtx_faq:faq.category.list', kwargs=kwargs)
 
 
+@perm_annotation
 def faq_category_up(request, **kwargs):
     return redirect(faq_category_move(request, kwargs.get('pk'), up=True))
 
 
+@perm_annotation
 def faq_category_down(request, **kwargs):
     return redirect(faq_category_move(request, kwargs.get('pk'), up=False))

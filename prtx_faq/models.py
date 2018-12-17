@@ -23,5 +23,8 @@ class FAQ(models.Model):
     tags = models.CharField(null=True, blank=True, max_length=180, verbose_name=_('Tags'), help_text=('Tags can help people find related questions. Please enter the tags separated by commas.'))
     position = models.PositiveIntegerField(verbose_name=_('Position'))
 
+    def __str__(self):
+        return str(self.question)
+
     class Meta:
         ordering = ('category__position', 'position', 'id')

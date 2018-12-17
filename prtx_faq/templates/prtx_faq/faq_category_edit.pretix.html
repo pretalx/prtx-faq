@@ -3,10 +3,14 @@
 {% load i18n %}
 
 {% block content %}
-<h2>{% trans "Update Category" %}</h2>
-<form method="post">
+<h2>{% trans "Update FAQ category" %}</h2>
+<form method="post" class="form-horizontal">
     {% csrf_token %}
     {% bootstrap_form form layout='control' %}
-    <button type="submit" class="btn btn-success">{% trans "Save" %}</button>
+    <div class="form-group submit-group">
+        <button type="submit" class="btn btn-primary btn-save">
+            {% trans "Save" %}
+        </button>
+    </div>
 </form>
 {% endblock %}

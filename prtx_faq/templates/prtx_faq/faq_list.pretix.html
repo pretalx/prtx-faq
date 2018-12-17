@@ -2,14 +2,36 @@
 {% load i18n %}
 
 {% block content %}
+    <h1>{% trans "FAQ Questions" %}</h1>
 <div class="float-left">
     <p class="clearfix"></p>
-    <a class="btn btn-info ml-auto" href="{% url "plugins:prtx_faq:faq.category.list" event=request.event.slug organizer=request.organizer.slug %}">
-        {% trans "Show categories" %}
-    </a>
-    <a class="btn btn-success ml-auto" href="{% url "plugins:prtx_faq:faq.create" event=request.event.slug organizer=request.organizer.slug %}">
+    <a class="btn btn-default ml-auto" href="{% url "plugins:prtx_faq:faq.create" event=request.event.slug organizer=request.organizer.slug %}">
+        <span class="fa fa-plus"></span>
         {% trans "Add question" %}
     </a>
 </div>
-{% include "prtx_faq/faq_list.html" %}
+    <table class="table">
+        <thead><tr>
+            <th>{% trans "Question" %}</th>
+            <th>{% trans "Category" %}</th>
+            <th></th>
+            <th></th>
+        </tr></thead>
+        <tbody>
+        {% for question in questions %}
+            <tr>
+                <td>{{ question.question }}</td>
+                <td>{{ question.category.name }}</td>
+                <td>
+                    <a href="{{ question.pk }}/up" class="btn btn-default btn-sm"><i class="fa fa-arrow-up"></i></a>
+                    <a href="{{ question.pk }}/down" class="btn btn-default btn-sm"><i class="fa fa-arrow-down"></i></a>
+                </td>
+                <td class="text-right">
+                    <a href="{{ question.pk }}" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></a>
+                    <a href="{{ question.pk }}/delete" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

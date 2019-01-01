@@ -20,8 +20,10 @@ if PRTX == 'pretix':
 
     perm_annotation = event_permission_required('can_change_event_settings')
 else:
-    class PermMixin:
-        pass
+    from pretalx.common.mixins.views import PermissionRequired
+
+    class PermMixin(PermissionRequired):
+        permission_required = 'orga.change_settings'
     perm_annotation = lambda f: f
 
 

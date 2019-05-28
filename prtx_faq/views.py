@@ -26,6 +26,9 @@ else:
     class PermMixin(PermissionRequired):
         permission_required = 'orga.change_settings'
 
+        def get_permission_object(self):
+            return self.request.event
+
     def perm(func):
         return func
 

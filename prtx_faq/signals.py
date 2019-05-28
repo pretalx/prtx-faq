@@ -38,18 +38,19 @@ elif PRTX == 'pretix':
                 'icon': 'question-circle-o',
                 'url': reverse('plugins:prtx_faq:faq.list', kwargs=kwargs),
                 'active': False,
-                'children': [],
-            },
-            {
-                'label': _('Categories'),
-                'url': reverse('plugins:prtx_faq:faq.category.list', kwargs=kwargs),
-                'parent': reverse('plugins:prtx_faq:faq.list', kwargs=kwargs),
-                'active': 'faq.category' in url.url_name,
-            },
-            {
-                'label': _('Questions'),
-                'url': reverse('plugins:prtx_faq:faq.list', kwargs=kwargs),
-                'parent': reverse('plugins:prtx_faq:faq.list', kwargs=kwargs),
-                'active': 'faq' in url.url_name and 'category' not in url.url_name,
+                'children': [
+                    {
+                        'label': _('Categories'),
+                        'url': reverse('plugins:prtx_faq:faq.category.list', kwargs=kwargs),
+                        'parent': reverse('plugins:prtx_faq:faq.list', kwargs=kwargs),
+                        'active': 'faq.category' in url.url_name,
+                    },
+                    {
+                        'label': _('Questions'),
+                        'url': reverse('plugins:prtx_faq:faq.list', kwargs=kwargs),
+                        'parent': reverse('plugins:prtx_faq:faq.list', kwargs=kwargs),
+                        'active': 'faq' in url.url_name and 'category' not in url.url_name,
+                    },
+                ],
             },
         ]

@@ -10,10 +10,11 @@ from prtx_faq.forms import FAQCategoryForm, FAQForm
 from prtx_faq.models import FAQ, FAQCategory
 from prtx_faq.prtx import PRTX
 
-
 if PRTX == 'pretix':
-    from pretix.control.permissions import EventPermissionRequiredMixin, event_permission_required
-
+    from pretix.control.permissions import (
+        EventPermissionRequiredMixin,
+        event_permission_required,
+    )
 
     class PermMixin(EventPermissionRequiredMixin):
         permission = 'can_change_event_settings'
@@ -24,7 +25,11 @@ else:
 
     class PermMixin(PermissionRequired):
         permission_required = 'orga.change_settings'
-    perm_annotation = lambda f: f
+
+    def perm(func):
+        return func
+
+    perm_annotation = perm
 
 
 class FAQView(TemplateView):
@@ -44,7 +49,9 @@ class FAQList(PermMixin, ListView):
     template_name = 'prtx_faq/faq_list.{}.html'.format(PRTX)
 
     def get_queryset(self):
-        return FAQ.objects.filter(category__event=self.request.event).order_by('category__position', 'position', 'pk')
+        return FAQ.objects.filter(category__event=self.request.event).order_by(
+            'category__position', 'position', 'pk'
+        )
 
 
 class FAQCreate(PermMixin, FormView):
@@ -92,7 +99,9 @@ class FAQDelete(PermMixin, DeleteView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['question'] = FAQ.objects.get(category__event=self.request.event, pk=self.kwargs['pk'])
+        context['question'] = FAQ.objects.get(
+            category__event=self.request.event, pk=self.kwargs['pk']
+        )
         return context
 
     def get_success_url(self):
@@ -108,7 +117,9 @@ def faq_move(request, pk, up=True):
         question = FAQ.objects.get(category__event=request.event, pk=pk)
     except FAQ.DoesNotExist:
         raise Http404(_('The selected question does not exist.'))
-    questions = list(FAQ.objects.filter(category=question.category).order_by('position'))
+    questions = list(
+        FAQ.objects.filter(category=question.category).order_by('position')
+    )
 
     index = questions.index(question)
     if index != 0 and up:
@@ -191,7 +202,9 @@ class FAQCategoryDelete(PermMixin, DeleteView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['category'] = self.request.event.faq_categories.get(pk=self.kwargs['pk'])
+        context['category'] = self.request.event.faq_categories.get(
+            pk=self.kwargs['pk']
+        )
         return context
 
     def get_success_url(self):
@@ -211,9 +224,15 @@ def faq_category_move(request, pk, up=True):
 
     index = categories.index(category)
     if index != 0 and up:
-        categories[index - 1], categories[index] = categories[index], categories[index - 1]
+        categories[index - 1], categories[index] = (
+            categories[index],
+            categories[index - 1],
+        )
     elif index != len(categories) - 1 and not up:
-        categories[index + 1], categories[index] = categories[index], categories[index + 1]
+        categories[index + 1], categories[index] = (
+            categories[index],
+            categories[index + 1],
+        )
 
     for i, cat in enumerate(categories):
         if cat.position != i:

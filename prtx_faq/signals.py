@@ -28,9 +28,10 @@ elif PRTX == 'pretix':
     @receiver(nav_event, dispatch_uid='faq_nav_entry')
     def navbar_info(sender, request, **kwargs):
         url = resolve(request.path_info)
-        kwargs = {'event': request.event.slug}
-        if PRTX == 'pretix':
-            kwargs['organizer'] = request.organizer.slug
+        kwargs = {
+            'event': request.event.slug,
+            'organizer': request.organizer.slug,
+        }
         return [
             {
                 'label': _('FAQ'),

@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-05-24 19:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: local/prtx-faq/prtx_faq/__init__.py:10
+#: local/prtx-faq/prtx_faq/__init__.py:17
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq.html:8
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/__init__.py:12
+#: local/prtx-faq/prtx_faq/__init__.py:19
+msgid "An FAQ plugin for pretalx and pretix"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/models.py:14
+msgid "Name"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/models.py:15 local/prtx-faq/prtx_faq/models.py:44
+msgid "Position"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/models.py:31
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_list.pretalx.html:13
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_list.pretix.html:16
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretalx.html:17
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretix.html:16
+msgid "Category"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/models.py:33
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretalx.html:16
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretix.html:15
+msgid "Question"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/models.py:34
+msgid "Answer"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/models.py:39
+msgid "Tags"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/signals.py:17 local/prtx-faq/prtx_faq/signals.py:36
+msgid "FAQ"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/signals.py:43
+msgid "Categories"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/signals.py:49
+msgid "Questions"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq.html:6
+msgid "Search"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretalx.html:6
+msgid "New Category"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretalx.html:10
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretix.html:12
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretalx.html:10
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretix.html:12
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretalx.html:10
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretix.html:12
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretalx.html:10
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretix.html:12
+msgid "Save"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretix.html:6
+msgid "New FAQ category"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_delete.html:2
+msgid "Delete category?"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_delete.html:5
+#, python-format
+msgid ""
+"Are you sure you want to delete the category <strong>%(category)s</strong>?"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_delete.html:8
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_delete.html:8
+msgid "Delete"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretalx.html:6
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretalx.html:6
+msgid "Update Category"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretix.html:6
+msgid "Update FAQ category"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_list.pretalx.html:7
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_list.pretix.html:10
+msgid "Add category"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_list.pretix.html:5
+msgid "FAQ categories"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretalx.html:6
+msgid "New Question"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretix.html:6
+msgid "New question"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_delete.html:2
+msgid "Delete question?"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_delete.html:5
+#, python-format
+msgid ""
+"Are you sure you want to delete the question <strong>%(question)s</strong>?"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretix.html:6
+msgid "Update Question"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretalx.html:7
+msgid "Show categories"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretalx.html:10
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretix.html:10
+msgid "Add question"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretix.html:5
+msgid "FAQ Questions"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/views.py:65
+msgid "Question created!"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/views.py:87
+msgid "Question saved!"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/views.py:111
+msgid "Question deleted!"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/views.py:119
+msgid "The selected question does not exist."
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/views.py:134
+msgid "The order of questions has been updated."
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/views.py:172
+msgid "Category created!"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/views.py:190
+msgid "Category saved!"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/views.py:214
+msgid "Category deleted!"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/views.py:222
+msgid "The selected category does not exist."
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/views.py:241
+msgid "The order of categories has been updated."
+msgstr ""

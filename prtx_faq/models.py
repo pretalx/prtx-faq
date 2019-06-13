@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django_scopes import ScopedManager
 from i18nfield.fields import I18nCharField, I18nTextField
 from prtx_faq.prtx import PRTX
 
@@ -12,6 +13,8 @@ class FAQCategory(models.Model):
     )
     name = I18nCharField(verbose_name=_('Name'), max_length=180)
     position = models.PositiveIntegerField(verbose_name=_('Position'))
+
+    objects = ScopedManager(event='event')
 
     def __str__(self):
         return str(self.name)
@@ -39,6 +42,8 @@ class FAQ(models.Model):
         ),
     )
     position = models.PositiveIntegerField(verbose_name=_('Position'))
+
+    objects = ScopedManager(event='category__event')
 
     def __str__(self):
         return str(self.question)

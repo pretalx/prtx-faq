@@ -10,8 +10,6 @@ if PRTX == 'pretalx':
     def navbar_info(sender, request, **kwargs):
         url = resolve(request.path_info)
         kwargs = {'event': request.event.slug}
-        if PRTX == 'pretix':
-            kwargs['organizer'] = request.organizer.slug
         return [
             {
                 'label': _('FAQ'),

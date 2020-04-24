@@ -1,5 +1,5 @@
 from django.apps import AppConfig
-from django.utils.translation import ugettext_lazy
+from django.utils.translation import gettext_lazy
 
 
 class PluginApp(AppConfig):
@@ -7,16 +7,16 @@ class PluginApp(AppConfig):
     verbose_name = 'A FAQ plugin for pretalx and pretix'
 
     class PretixPluginMeta:
-        name = ugettext_lazy('Frequently Asked Questions')
+        name = gettext_lazy('Frequently Asked Questions')
         author = 'Tobias Kunze'
-        description = ugettext_lazy('An FAQ plugin for pretalx and pretix')
+        description = gettext_lazy('An FAQ plugin for pretalx and pretix')
         visible = True
         version = '1.0.0'
 
     class PretalxPluginMeta:
-        name = ugettext_lazy('Frequently Asked Questions')
+        name = gettext_lazy('Frequently Asked Questions')
         author = 'Tobias Kunze'
-        description = ugettext_lazy('An FAQ plugin for pretalx and pretix')
+        description = gettext_lazy('An FAQ plugin for pretalx and pretix')
         visible = True
         version = '1.0.0'
 

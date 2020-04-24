@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-02 10:08+0000\n"
+"POT-Creation-Date: 2020-04-14 00:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,15 +28,15 @@ msgstr ""
 msgid "An FAQ plugin for pretalx and pretix"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/models.py:13
+#: local/prtx-faq/prtx_faq/models.py:14
 msgid "Name"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/models.py:14 local/prtx-faq/prtx_faq/models.py:41
+#: local/prtx-faq/prtx_faq/models.py:15 local/prtx-faq/prtx_faq/models.py:44
 msgid "Position"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/models.py:28
+#: local/prtx-faq/prtx_faq/models.py:31
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_list.pretalx.html:13
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_list.pretix.html:16
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretalx.html:17
@@ -44,29 +44,29 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/models.py:30
+#: local/prtx-faq/prtx_faq/models.py:33
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretalx.html:16
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretix.html:15
 msgid "Question"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/models.py:31
+#: local/prtx-faq/prtx_faq/models.py:34
 msgid "Answer"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/models.py:36
+#: local/prtx-faq/prtx_faq/models.py:39
 msgid "Tags"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/signals.py:17 local/prtx-faq/prtx_faq/signals.py:37
+#: local/prtx-faq/prtx_faq/signals.py:15 local/prtx-faq/prtx_faq/signals.py:35
 msgid "FAQ"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/signals.py:44
+#: local/prtx-faq/prtx_faq/signals.py:41
 msgid "Categories"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/signals.py:50
+#: local/prtx-faq/prtx_faq/signals.py:47
 msgid "Questions"
 msgstr ""
 

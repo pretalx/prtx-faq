@@ -3,200 +3,195 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-14 00:25+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2020-07-30 19:31+0200\n"
+"PO-Revision-Date: 2020-07-30 19:38+0200\n"
+"Last-Translator: Stéphane Parunakian <parunakian.stephane@gmail.com>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.3.1\n"
 
-#: local/prtx-faq/prtx_faq/__init__.py:10
-#: local/prtx-faq/prtx_faq/__init__.py:17
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq.html:8
+#: prtx_faq/__init__.py:10 prtx_faq/__init__.py:17
+#: prtx_faq/templates/prtx_faq/faq.html:8
 msgid "Frequently Asked Questions"
-msgstr ""
+msgstr "Foire aux questions"
 
-#: local/prtx-faq/prtx_faq/__init__.py:12
-#: local/prtx-faq/prtx_faq/__init__.py:19
+#: prtx_faq/__init__.py:12 prtx_faq/__init__.py:19
 msgid "An FAQ plugin for pretalx and pretix"
-msgstr ""
+msgstr "Un plugin de FAQ pour pretalx et pretix"
 
-#: local/prtx-faq/prtx_faq/models.py:14
+#: prtx_faq/models.py:14
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
-#: local/prtx-faq/prtx_faq/models.py:15 local/prtx-faq/prtx_faq/models.py:44
+#: prtx_faq/models.py:15 prtx_faq/models.py:44
 msgid "Position"
-msgstr ""
+msgstr "Position"
 
-#: local/prtx-faq/prtx_faq/models.py:31
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_list.pretalx.html:13
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_list.pretix.html:16
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretalx.html:17
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretix.html:16
+#: prtx_faq/models.py:31
+#: prtx_faq/templates/prtx_faq/faq_category_list.pretalx.html:13
+#: prtx_faq/templates/prtx_faq/faq_category_list.pretix.html:16
+#: prtx_faq/templates/prtx_faq/faq_list.pretalx.html:17
+#: prtx_faq/templates/prtx_faq/faq_list.pretix.html:16
 msgid "Category"
-msgstr ""
+msgstr "Catégorie"
 
-#: local/prtx-faq/prtx_faq/models.py:33
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretalx.html:16
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretix.html:15
+#: prtx_faq/models.py:33 prtx_faq/templates/prtx_faq/faq_list.pretalx.html:16
+#: prtx_faq/templates/prtx_faq/faq_list.pretix.html:15
 msgid "Question"
-msgstr ""
+msgstr "Question"
 
-#: local/prtx-faq/prtx_faq/models.py:34
+#: prtx_faq/models.py:34
 msgid "Answer"
-msgstr ""
+msgstr "Réponse"
 
-#: local/prtx-faq/prtx_faq/models.py:39
+#: prtx_faq/models.py:39
 msgid "Tags"
-msgstr ""
+msgstr "Étiquettes"
 
-#: local/prtx-faq/prtx_faq/signals.py:15 local/prtx-faq/prtx_faq/signals.py:35
+#: prtx_faq/signals.py:15 prtx_faq/signals.py:35
 msgid "FAQ"
-msgstr ""
+msgstr "FAQ"
 
-#: local/prtx-faq/prtx_faq/signals.py:41
+#: prtx_faq/signals.py:41
 msgid "Categories"
-msgstr ""
+msgstr "Catégories"
 
-#: local/prtx-faq/prtx_faq/signals.py:47
+#: prtx_faq/signals.py:47
 msgid "Questions"
-msgstr ""
+msgstr "Questions"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq.html:6
+#: prtx_faq/templates/prtx_faq/faq.html:6
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretalx.html:6
+#: prtx_faq/templates/prtx_faq/faq_category_create.pretalx.html:6
 msgid "New Category"
-msgstr ""
+msgstr "Nouvelle catégorie"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretalx.html:10
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretix.html:12
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretalx.html:10
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretix.html:12
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretalx.html:10
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretix.html:12
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretalx.html:10
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretix.html:12
+#: prtx_faq/templates/prtx_faq/faq_category_create.pretalx.html:10
+#: prtx_faq/templates/prtx_faq/faq_category_create.pretix.html:12
+#: prtx_faq/templates/prtx_faq/faq_category_edit.pretalx.html:10
+#: prtx_faq/templates/prtx_faq/faq_category_edit.pretix.html:12
+#: prtx_faq/templates/prtx_faq/faq_create.pretalx.html:10
+#: prtx_faq/templates/prtx_faq/faq_create.pretix.html:12
+#: prtx_faq/templates/prtx_faq/faq_edit.pretalx.html:10
+#: prtx_faq/templates/prtx_faq/faq_edit.pretix.html:12
 msgid "Save"
-msgstr ""
+msgstr "Sauver"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretix.html:6
+#: prtx_faq/templates/prtx_faq/faq_category_create.pretix.html:6
 msgid "New FAQ category"
-msgstr ""
+msgstr "Nouvelle catégorie de la FAQ"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_delete.html:2
+#: prtx_faq/templates/prtx_faq/faq_category_delete.html:2
 msgid "Delete category?"
-msgstr ""
+msgstr "Supprimer la catégorie ?"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_delete.html:5
+#: prtx_faq/templates/prtx_faq/faq_category_delete.html:5
 #, python-format
-msgid ""
-"Are you sure you want to delete the category <strong>%(category)s</strong>?"
-msgstr ""
+msgid "Are you sure you want to delete the category <strong>%(category)s</strong>?"
+msgstr "Êtes-vous sûr de vouloir supprimer la catégorie <strong>%(category)s</strong> ?"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_delete.html:8
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_delete.html:8
+#: prtx_faq/templates/prtx_faq/faq_category_delete.html:8
+#: prtx_faq/templates/prtx_faq/faq_delete.html:8
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretalx.html:6
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretalx.html:6
+#: prtx_faq/templates/prtx_faq/faq_category_edit.pretalx.html:6
+#: prtx_faq/templates/prtx_faq/faq_edit.pretalx.html:6
 msgid "Update Category"
-msgstr ""
+msgstr "Mettre à jour la catégorie"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretix.html:6
+#: prtx_faq/templates/prtx_faq/faq_category_edit.pretix.html:6
 msgid "Update FAQ category"
-msgstr ""
+msgstr "Mettre à jour la catégorie de la FAQ"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_list.pretalx.html:7
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_list.pretix.html:10
+#: prtx_faq/templates/prtx_faq/faq_category_list.pretalx.html:7
+#: prtx_faq/templates/prtx_faq/faq_category_list.pretix.html:10
 msgid "Add category"
-msgstr ""
+msgstr "Ajouter une catégorie"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_list.pretix.html:5
+#: prtx_faq/templates/prtx_faq/faq_category_list.pretix.html:5
 msgid "FAQ categories"
-msgstr ""
+msgstr "Catégories de la FAQ"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretalx.html:6
+#: prtx_faq/templates/prtx_faq/faq_create.pretalx.html:6
 msgid "New Question"
-msgstr ""
+msgstr "Nouvelle question"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretix.html:6
+#: prtx_faq/templates/prtx_faq/faq_create.pretix.html:6
 msgid "New question"
-msgstr ""
+msgstr "Nouvelle question"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_delete.html:2
+#: prtx_faq/templates/prtx_faq/faq_delete.html:2
 msgid "Delete question?"
-msgstr ""
+msgstr "Supprimer la question ?"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_delete.html:5
+#: prtx_faq/templates/prtx_faq/faq_delete.html:5
 #, python-format
-msgid ""
-"Are you sure you want to delete the question <strong>%(question)s</strong>?"
-msgstr ""
+msgid "Are you sure you want to delete the question <strong>%(question)s</strong>?"
+msgstr "Êtes-vous sûr de vouloir supprimer la question <strong>%(question)s</strong> ?"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretix.html:6
+#: prtx_faq/templates/prtx_faq/faq_edit.pretix.html:6
 msgid "Update Question"
-msgstr ""
+msgstr "Mettre à jour la question"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretalx.html:7
+#: prtx_faq/templates/prtx_faq/faq_list.pretalx.html:7
 msgid "Show categories"
-msgstr ""
+msgstr "Afficher les catégories"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretalx.html:10
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretix.html:10
+#: prtx_faq/templates/prtx_faq/faq_list.pretalx.html:10
+#: prtx_faq/templates/prtx_faq/faq_list.pretix.html:10
 msgid "Add question"
-msgstr ""
+msgstr "Ajouter une question"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretix.html:5
+#: prtx_faq/templates/prtx_faq/faq_list.pretix.html:5
 msgid "FAQ Questions"
-msgstr ""
+msgstr "Questions de la FAQ"
 
-#: local/prtx-faq/prtx_faq/views.py:68
+#: prtx_faq/views.py:68
 msgid "Question created!"
-msgstr ""
+msgstr "Question créée !"
 
-#: local/prtx-faq/prtx_faq/views.py:90
+#: prtx_faq/views.py:90
 msgid "Question saved!"
-msgstr ""
+msgstr "Question sauvée !"
 
-#: local/prtx-faq/prtx_faq/views.py:114
+#: prtx_faq/views.py:114
 msgid "Question deleted!"
-msgstr ""
+msgstr "Question supprimée !"
 
-#: local/prtx-faq/prtx_faq/views.py:122
+#: prtx_faq/views.py:122
 msgid "The selected question does not exist."
-msgstr ""
+msgstr "La question sélectionnée n'existe pas."
 
-#: local/prtx-faq/prtx_faq/views.py:137
+#: prtx_faq/views.py:137
 msgid "The order of questions has been updated."
-msgstr ""
+msgstr "L'ordre des questions a été mis à jour."
 
-#: local/prtx-faq/prtx_faq/views.py:175
+#: prtx_faq/views.py:175
 msgid "Category created!"
-msgstr ""
+msgstr "Catégorie créée !"
 
-#: local/prtx-faq/prtx_faq/views.py:193
+#: prtx_faq/views.py:193
 msgid "Category saved!"
-msgstr ""
+msgstr "Catégorie sauvée !"
 
-#: local/prtx-faq/prtx_faq/views.py:217
+#: prtx_faq/views.py:217
 msgid "Category deleted!"
-msgstr ""
+msgstr "Catégorie supprimée !"
 
-#: local/prtx-faq/prtx_faq/views.py:225
+#: prtx_faq/views.py:225
 msgid "The selected category does not exist."
-msgstr ""
+msgstr "La catégorie sélectionnée n'existe pas."
 
-#: local/prtx-faq/prtx_faq/views.py:244
+#: prtx_faq/views.py:244
 msgid "The order of categories has been updated."
-msgstr ""
+msgstr "L'ordre des catégories a été mis à jour."

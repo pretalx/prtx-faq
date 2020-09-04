@@ -4,7 +4,11 @@ from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import (
-    DeleteView, FormView, ListView, TemplateView, UpdateView,
+    DeleteView,
+    FormView,
+    ListView,
+    TemplateView,
+    UpdateView,
 )
 from prtx_faq.forms import FAQCategoryForm, FAQForm
 from prtx_faq.models import FAQ, FAQCategory

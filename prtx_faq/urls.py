@@ -1,4 +1,4 @@
-from django.conf.urls import url
+from django.urls import re_path
 from prtx_faq.prtx import PRTX
 
 from . import views
@@ -23,14 +23,14 @@ def get_urls():
     if PRTX == 'pretix':
         base = r'^control/event/(?P<organizer>[^/]+)/(?P<event>[^/]+)/'
         for entry in data:
-            urls.append(url(base + entry[0], entry[1], name=entry[2]))
+            urls.append(re_path(base + entry[0], entry[1], name=entry[2]))
 
     elif PRTX == 'pretalx':
         base = r'^orga/event/(?P<event>[^/]+)/'
         for entry in data:
-            urls.append(url(base + entry[0], entry[1], name=entry[2]))
+            urls.append(re_path(base + entry[0], entry[1], name=entry[2]))
         urls.append(
-            url(r'^(?P<event>[^/]+)/faq/$', views.FAQView.as_view(), name='faq'),
+            re_path(r'^(?P<event>[^/]+)/faq/$', views.FAQView.as_view(), name='faq'),
         )
     return urls
 

@@ -14,7 +14,9 @@ class FAQCategory(models.Model):
     name = I18nCharField(verbose_name=_('Name'), max_length=180)
     position = models.PositiveIntegerField(verbose_name=_('Position'))
 
-    objects = ScopedManager(event='event')
+    objects = ScopedManager(**(
+        dict(organizer='event__organizer') if PRTX == 'pretix' else dict(event='event')
+    ))
 
     def __str__(self):
         return str(self.name)
@@ -43,7 +45,9 @@ class FAQ(models.Model):
     )
     position = models.PositiveIntegerField(verbose_name=_('Position'))
 
-    objects = ScopedManager(event='category__event')
+    objects = ScopedManager(**(
+        dict(organizer='category__event__organizer') if PRTX == 'pretix' else dict(event='category__event')
+    ))
 
     def __str__(self):
         return str(self.question)

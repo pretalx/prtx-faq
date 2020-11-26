@@ -9,10 +9,13 @@
 
 {% for category in categories %}
 {% if category.questions.exists %}
-<section id="faq-category-{{ category.pk }}" class="panel panel-default card question-category">
-    <div class="panel-heading card-header">
-        <div class="panel-title">{{ category }}</div>
-    </div>
+<details id="faq-category-{{ category.pk }}" class="panel panel-default card question-category" open>
+    <summary class="panel-heading card-header">
+        <div class="panel-title">
+            <span class="fa fa-fw"></span>
+            {{ category }}
+        </div>
+    </summary>
     <ul class="list-group" id="q-{{ question.id }}">
     {% for question in category.questions.all %}
         <li class="question list-group-item">
@@ -24,6 +27,6 @@
         </li>
     {% endfor %}
     </ul>
-</section>
+</details>
 {% endif %}
 {% endfor %}

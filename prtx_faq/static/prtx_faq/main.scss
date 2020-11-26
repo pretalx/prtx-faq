@@ -1,3 +1,6 @@
+$fa-var-caret-down: "\f0d7";
+$fa-var-caret-right: "\f0da";
+
 #faqSearch {
     float: right;
     width: 300px;
@@ -21,4 +24,12 @@
 
 .question-asked {
     font-weight: bold;
+}
+.question-category {
+    summary .fa::before {
+        content: $fa-var-caret-right;
+    }
+    &[open] summary .fa::before {
+        content: $fa-var-caret-down;
+    }
 }

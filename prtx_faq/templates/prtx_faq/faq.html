@@ -6,7 +6,7 @@
 <input id="faqSearch" class="form-control" type="text" placeholder="{% trans "Search" %}">
 
 <h2>{% trans "Frequently Asked Questions" %}</h2>
-<div id="faq-searchfor" class="faq-res hidden">{% trans "Results for: " %}<strong><span></span></strong></div>
+<div id="faq-searchfor" class="faq-res hidden">{% trans "Results for" %}: <strong><span></span></strong></div>
 <div id="faq-result" class="faq-res hidden"><span></span> {% trans "Hits" %}</div>
 {% for category in categories %}
     {% if category.questions.exists %}

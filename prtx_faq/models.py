@@ -14,6 +14,7 @@ class FAQCategory(models.Model):
     )
     name = I18nCharField(verbose_name=_("Name"), max_length=180)
     position = models.PositiveIntegerField(verbose_name=_("Position"))
+    hidden = models.BooleanField(default=False)
 
     objects = ScopedManager(
         **(
@@ -49,6 +50,7 @@ class FAQ(models.Model):
         ),
     )
     position = models.PositiveIntegerField(verbose_name=_("Position"))
+    hidden = models.BooleanField(default=False)
 
     objects = ScopedManager(
         **(

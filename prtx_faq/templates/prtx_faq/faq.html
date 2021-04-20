@@ -12,20 +12,22 @@
     {% if category.questions.exists %}
         <details id="faq-category-{{ category.pk }}" class="panel panel-default card question-category" open>
             <summary class="panel-heading card-header">
-                <div class="panel-title">
-                    <span class="fa fa-fw"></span>
-                    {{ category }}
-                </div>
+                <h3 class="panel-title">
+                  <strong>{{ category }}</strong>
+                  <i class="fa fa-fw collapse-indicator" aria-hidden="true"></i>
+                </h3>
             </summary>
             <ul class="list-group" id="q-{{ question.id }}">
                 {% for question in category.questions.all %}
-                    <li class="question list-group-item">
-                        <div id="faq-{{ question.id }}" class="question-asked">
-                            {{ question.question }}
-                            <a href="#faq-{{ question.id }}">¶</a>
-                        </div>
-                        <div class="question-answered">{{ question.answer|rich_text }}</div>
-                    </li>
+                    {% if not question.hidden %}
+                        <li class="question list-group-item">
+                            <div id="faq-{{ question.id }}" class="question-asked">
+                                {{ question.question }}
+                                <a href="#faq-{{ question.id }}">¶</a>
+                            </div>
+                            <div class="question-answered">{{ question.answer|rich_text }}</div>
+                        </li>
+                    {% endif %}
                 {% endfor %}
             </ul>
         </details>

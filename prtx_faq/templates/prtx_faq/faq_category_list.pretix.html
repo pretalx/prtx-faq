@@ -27,6 +27,7 @@
                         <a href="{{ category.pk }}/down" class="btn btn-default btn-sm"><i class="fa fa-arrow-down"></i></a>
                     </td>
                     <td class="flip text-right">
+                        {% if category.hidden %}<i class="fa fa-eye-slash"></i>{% endif %}
                         <a href="{{ category.pk }}" class="btn btn-default btn-sm"><i class="fa fa-pencil"></i></a>
                         <a href="{{ category.pk }}/delete" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                     </td>

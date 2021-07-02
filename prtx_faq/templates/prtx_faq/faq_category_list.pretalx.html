@@ -2,29 +2,29 @@
 {% load i18n %}
 
 {% block content %}
-<div>
-    <a class="btn btn-success ml-auto" href="{% url "plugins:prtx_faq:faq.category.create" event=request.event.slug %}">
-        {% trans "Add category" %}
-    </a>
-    <p class="clearfix"></p>
-</div>
+    <div>
+        <a class="btn btn-success ml-auto" href="{% url "plugins:prtx_faq:faq.category.create" event=request.event.slug %}">
+            {% trans "Add category" %}
+        </a>
+        <p class="clearfix"></p>
+    </div>
     <table class="table">
         <thead><tr>
             <th>{% trans "Category" %}</th>
             <th></th>
         </tr></thead>
         <tbody>
-        {% for category in categories %}
-            <tr>
-                <td>{{ category.name }}</td>
-                <td>
-                    <a href="{{ category.pk }}/up" class="btn btn-outline-info btn-sm"><i class="fa fa-arrow-up"></i></a>
-                    <a href="{{ category.pk }}/down" class="btn btn-outline-info btn-sm"><i class="fa fa-arrow-down"></i></a>
-                    <a href="{{ category.pk }}" class="btn btn-info btn-sm"><i class="fa fa-pencil"></i></a>
-                    <a href="{{ category.pk }}/delete" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-                </td>
-            </tr>
-        {% endfor %}
+            {% for category in categories %}
+                <tr>
+                    <td>{{ category.name }}</td>
+                    <td>
+                        <a href="{{ category.pk }}/up" class="btn btn-outline-info btn-sm"><i class="fa fa-arrow-up"></i></a>
+                        <a href="{{ category.pk }}/down" class="btn btn-outline-info btn-sm"><i class="fa fa-arrow-down"></i></a>
+                        <a href="{{ category.pk }}" class="btn btn-info btn-sm"><i class="fa fa-pencil"></i></a>
+                        <a href="{{ category.pk }}/delete" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 {% endblock %}

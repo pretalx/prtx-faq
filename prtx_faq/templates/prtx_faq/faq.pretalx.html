@@ -5,9 +5,9 @@
 {% block title %}FAQ{% endblock %}
 {% block custom_header %}
     {% compress css %}
-    <link type="text/x-scss" rel="stylesheet" href="{% static "prtx_faq/main.scss" %}" />
+        <link type="text/x-scss" rel="stylesheet" href="{% static "prtx_faq/main.scss" %}" />
     {% endcompress %}
 {% endblock %}
 {% block content %}
-{% include "prtx_faq/faq.html" %}
+    {% include "prtx_faq/faq.html" %}
 {% endblock %}

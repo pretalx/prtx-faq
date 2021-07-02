@@ -2,15 +2,15 @@
 {% load i18n %}
 
 {% block content %}
-<div>
-    <a class="btn btn-info ml-auto" href="{% url "plugins:prtx_faq:faq.category.list" event=request.event.slug %}">
-        {% trans "Show categories" %}
-    </a>
-    <a class="btn btn-success ml-auto" href="{% url "plugins:prtx_faq:faq.create" event=request.event.slug %}">
-        {% trans "Add question" %}
-    </a>
-    <p class="clearfix"></p>
-</div>
+    <div>
+        <a class="btn btn-info ml-auto" href="{% url "plugins:prtx_faq:faq.category.list" event=request.event.slug %}">
+            {% trans "Show categories" %}
+        </a>
+        <a class="btn btn-success ml-auto" href="{% url "plugins:prtx_faq:faq.create" event=request.event.slug %}">
+            {% trans "Add question" %}
+        </a>
+        <p class="clearfix"></p>
+    </div>
     <table class="table">
         <thead><tr>
             <th>{% trans "Question" %}</th>
@@ -18,18 +18,18 @@
             <th></th>
         </tr></thead>
         <tbody>
-        {% for question in questions %}
-            <tr>
-                <td>{{ question.question }}</td>
-                <td>{{ question.category.name }}</td>
-                <td>
-                    <a href="{{ question.pk }}/up" class="btn btn-outline-info btn-sm"><i class="fa fa-arrow-up"></i></a>
-                    <a href="{{ question.pk }}/down" class="btn btn-outline-info btn-sm"><i class="fa fa-arrow-down"></i></a>
-                    <a href="{{ question.pk }}" class="btn btn-info btn-sm"><i class="fa fa-pencil"></i></a>
-                    <a href="{{ question.pk }}/delete" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
-                </td>
-            </tr>
-        {% endfor %}
+            {% for question in questions %}
+                <tr>
+                    <td>{{ question.question }}</td>
+                    <td>{{ question.category.name }}</td>
+                    <td>
+                        <a href="{{ question.pk }}/up" class="btn btn-outline-info btn-sm"><i class="fa fa-arrow-up"></i></a>
+                        <a href="{{ question.pk }}/down" class="btn btn-outline-info btn-sm"><i class="fa fa-arrow-down"></i></a>
+                        <a href="{{ question.pk }}" class="btn btn-info btn-sm"><i class="fa fa-pencil"></i></a>
+                        <a href="{{ question.pk }}/delete" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            {% endfor %}
         </tbody>
     </table>
 {% endblock %}

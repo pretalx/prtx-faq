@@ -22,6 +22,3 @@ class PluginApp(AppConfig):
 
     def ready(self):
         from . import signals  # NOQA
-
-
-default_app_config = 'prtx_faq.PluginApp'

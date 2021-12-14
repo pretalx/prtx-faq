@@ -4,31 +4,27 @@ from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import (
-    DeleteView,
-    FormView,
-    ListView,
-    TemplateView,
-    UpdateView,
+    DeleteView, FormView, ListView, TemplateView, UpdateView,
 )
+
 from prtx_faq.forms import FAQCategoryForm, FAQForm
 from prtx_faq.models import FAQ, FAQCategory
 from prtx_faq.prtx import PRTX
 
-if PRTX == 'pretix':
+if PRTX == "pretix":
     from pretix.control.permissions import (
-        EventPermissionRequiredMixin,
-        event_permission_required,
+        EventPermissionRequiredMixin, event_permission_required,
     )
 
     class PermMixin(EventPermissionRequiredMixin):
-        permission = 'can_change_event_settings'
+        permission = "can_change_event_settings"
 
-    perm_annotation = event_permission_required('can_change_event_settings')
+    perm_annotation = event_permission_required("can_change_event_settings")
 else:
     from pretalx.common.mixins.views import PermissionRequired
 
     class PermMixin(PermissionRequired):
-        permission_required = 'orga.change_settings'
+        permission_required = "orga.change_settings"
 
         def get_permission_object(self):
             return self.request.event
@@ -40,37 +36,37 @@ else:
 
 
 class FAQView(TemplateView):
-    template_name = 'prtx_faq/faq.{}.html'.format(PRTX)
+    template_name = "prtx_faq/faq.{}.html".format(PRTX)
 
     def get_context_data(self, *args, **kwargs):
         ctx = super().get_context_data(*args, **kwargs)
-        ctx['categories'] = self.request.event.faq_categories.all()
-        ctx['event'] = self.request.event
-        ctx['organizer'] = getattr(self.request, 'organizer', None)
+        ctx["categories"] = self.request.event.faq_categories.all()
+        ctx["event"] = self.request.event
+        ctx["organizer"] = getattr(self.request, "organizer", None)
         return ctx
 
 
 class FAQList(PermMixin, ListView):
     model = FAQ
-    context_object_name = 'questions'
-    template_name = 'prtx_faq/faq_list.{}.html'.format(PRTX)
+    context_object_name = "questions"
+    template_name = "prtx_faq/faq_list.{}.html".format(PRTX)
 
     def get_queryset(self):
         return FAQ.objects.filter(category__event=self.request.event).order_by(
-            'category__position', 'position', 'pk'
+            "category__position", "position", "pk"
         )
 
 
 class FAQCreate(PermMixin, FormView):
-    template_name = 'prtx_faq/faq_create.{}.html'.format(PRTX)
+    template_name = "prtx_faq/faq_create.{}.html".format(PRTX)
     form_class = FAQForm
 
     def get_success_url(self):
-        kwargs = {'event': self.request.event.slug}
-        if PRTX == 'pretix':
-            kwargs['organizer'] = self.request.organizer.slug
-        messages.success(self.request, _('Question created!'))
-        return reverse('plugins:prtx_faq:faq.list', kwargs=kwargs)
+        kwargs = {"event": self.request.event.slug}
+        if PRTX == "pretix":
+            kwargs["organizer"] = self.request.organizer.slug
+        messages.success(self.request, _("Question created!"))
+        return reverse("plugins:prtx_faq:faq.list", kwargs=kwargs)
 
     def form_valid(self, form):
         form.save()
@@ -78,54 +74,54 @@ class FAQCreate(PermMixin, FormView):
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['event'] = self.request.event
+        kwargs["event"] = self.request.event
         return kwargs
 
 
 class FAQEdit(PermMixin, UpdateView):
     model = FAQ
-    template_name = 'prtx_faq/faq_edit.{}.html'.format(PRTX)
+    template_name = "prtx_faq/faq_edit.{}.html".format(PRTX)
     form_class = FAQForm
 
     def get_success_url(self):
-        kwargs = {'event': self.request.event.slug}
-        if PRTX == 'pretix':
-            kwargs['organizer'] = self.request.organizer.slug
-        messages.success(self.request, _('Question saved!'))
-        return reverse('plugins:prtx_faq:faq.list', kwargs=kwargs)
+        kwargs = {"event": self.request.event.slug}
+        if PRTX == "pretix":
+            kwargs["organizer"] = self.request.organizer.slug
+        messages.success(self.request, _("Question saved!"))
+        return reverse("plugins:prtx_faq:faq.list", kwargs=kwargs)
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['event'] = self.request.event
+        kwargs["event"] = self.request.event
         return kwargs
 
 
 class FAQDelete(PermMixin, DeleteView):
     model = FAQ
-    template_name = 'prtx_faq/faq_delete.{}.html'.format(PRTX)
+    template_name = "prtx_faq/faq_delete.{}.html".format(PRTX)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['question'] = FAQ.objects.get(
-            category__event=self.request.event, pk=self.kwargs['pk']
+        context["question"] = FAQ.objects.get(
+            category__event=self.request.event, pk=self.kwargs["pk"]
         )
         return context
 
     def get_success_url(self):
-        kwargs = {'event': self.request.event.slug}
-        if PRTX == 'pretix':
-            kwargs['organizer'] = self.request.organizer.slug
-        messages.success(self.request, _('Question deleted!'))
-        return reverse('plugins:prtx_faq:faq.list', kwargs=kwargs)
+        kwargs = {"event": self.request.event.slug}
+        if PRTX == "pretix":
+            kwargs["organizer"] = self.request.organizer.slug
+        messages.success(self.request, _("Question deleted!"))
+        return reverse("plugins:prtx_faq:faq.list", kwargs=kwargs)
 
 
 def faq_move(request, pk, up=True):
     try:
         question = FAQ.objects.get(category__event=request.event, pk=pk)
     except FAQ.DoesNotExist:
-        raise Http404(_('The selected question does not exist.'))
+        raise Http404(_("The selected question does not exist."))
     questions = list(
-        FAQ.objects.filter(category=question.category).order_by('position')
+        FAQ.objects.filter(category=question.category).order_by("position")
     )
 
     index = questions.index(question)
@@ -138,34 +134,34 @@ def faq_move(request, pk, up=True):
         if qst.position != i:
             qst.position = i
             qst.save()
-    messages.success(request, _('The order of questions has been updated.'))
-    kwargs = {'event': request.event.slug}
-    if PRTX == 'pretix':
-        kwargs['organizer'] = request.organizer.slug
-    return reverse('plugins:prtx_faq:faq.list', kwargs=kwargs)
+    messages.success(request, _("The order of questions has been updated."))
+    kwargs = {"event": request.event.slug}
+    if PRTX == "pretix":
+        kwargs["organizer"] = request.organizer.slug
+    return reverse("plugins:prtx_faq:faq.list", kwargs=kwargs)
 
 
 @perm_annotation
 def faq_up(request, **kwargs):
-    return redirect(faq_move(request, kwargs.get('pk'), up=True))
+    return redirect(faq_move(request, kwargs.get("pk"), up=True))
 
 
 @perm_annotation
 def faq_down(request, **kwargs):
-    return redirect(faq_move(request, kwargs.get('pk'), up=False))
+    return redirect(faq_move(request, kwargs.get("pk"), up=False))
 
 
 class FAQCategoryList(PermMixin, ListView):
     model = FAQCategory
-    context_object_name = 'categories'
-    template_name = 'prtx_faq/faq_category_list.{}.html'.format(PRTX)
+    context_object_name = "categories"
+    template_name = "prtx_faq/faq_category_list.{}.html".format(PRTX)
 
     def get_queryset(self):
-        return self.request.event.faq_categories.all().order_by('position', 'pk')
+        return self.request.event.faq_categories.all().order_by("position", "pk")
 
 
 class FAQCategoryCreate(PermMixin, FormView):
-    template_name = 'prtx_faq/faq_category_create.{}.html'.format(PRTX)
+    template_name = "prtx_faq/faq_category_create.{}.html".format(PRTX)
     form_class = FAQCategoryForm
 
     def form_valid(self, form):
@@ -173,61 +169,61 @@ class FAQCategoryCreate(PermMixin, FormView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        kwargs = {'event': self.request.event.slug}
-        if PRTX == 'pretix':
-            kwargs['organizer'] = self.request.organizer.slug
-        messages.success(self.request, _('Category created!'))
-        return reverse('plugins:prtx_faq:faq.category.list', kwargs=kwargs)
+        kwargs = {"event": self.request.event.slug}
+        if PRTX == "pretix":
+            kwargs["organizer"] = self.request.organizer.slug
+        messages.success(self.request, _("Category created!"))
+        return reverse("plugins:prtx_faq:faq.category.list", kwargs=kwargs)
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['event'] = self.request.event
+        kwargs["event"] = self.request.event
         return kwargs
 
 
 class FAQCategoryEdit(PermMixin, UpdateView):
     model = FAQCategory
-    template_name = 'prtx_faq/faq_category_edit.{}.html'.format(PRTX)
+    template_name = "prtx_faq/faq_category_edit.{}.html".format(PRTX)
     form_class = FAQCategoryForm
 
     def get_success_url(self):
-        kwargs = {'event': self.request.event.slug}
-        if PRTX == 'pretix':
-            kwargs['organizer'] = self.request.organizer.slug
-        messages.success(self.request, _('Category saved!'))
-        return reverse('plugins:prtx_faq:faq.category.list', kwargs=kwargs)
+        kwargs = {"event": self.request.event.slug}
+        if PRTX == "pretix":
+            kwargs["organizer"] = self.request.organizer.slug
+        messages.success(self.request, _("Category saved!"))
+        return reverse("plugins:prtx_faq:faq.category.list", kwargs=kwargs)
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
-        kwargs['event'] = self.request.event
+        kwargs["event"] = self.request.event
         return kwargs
 
 
 class FAQCategoryDelete(PermMixin, DeleteView):
     model = FAQCategory
-    template_name = 'prtx_faq/faq_category_delete.{}.html'.format(PRTX)
+    template_name = "prtx_faq/faq_category_delete.{}.html".format(PRTX)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['category'] = self.request.event.faq_categories.get(
-            pk=self.kwargs['pk']
+        context["category"] = self.request.event.faq_categories.get(
+            pk=self.kwargs["pk"]
         )
         return context
 
     def get_success_url(self):
-        kwargs = {'event': self.request.event.slug}
-        if PRTX == 'pretix':
-            kwargs['organizer'] = self.request.organizer.slug
-        messages.success(self.request, _('Category deleted!'))
-        return reverse('plugins:prtx_faq:faq.category.list', kwargs=kwargs)
+        kwargs = {"event": self.request.event.slug}
+        if PRTX == "pretix":
+            kwargs["organizer"] = self.request.organizer.slug
+        messages.success(self.request, _("Category deleted!"))
+        return reverse("plugins:prtx_faq:faq.category.list", kwargs=kwargs)
 
 
 def faq_category_move(request, pk, up=True):
     try:
         category = request.event.faq_categories.get(pk=pk)
     except FAQCategory.DoesNotExist:
-        raise Http404(_('The selected category does not exist.'))
-    categories = list(request.event.faq_categories.order_by('position'))
+        raise Http404(_("The selected category does not exist."))
+    categories = list(request.event.faq_categories.order_by("position"))
 
     index = categories.index(category)
     if index != 0 and up:
@@ -245,18 +241,18 @@ def faq_category_move(request, pk, up=True):
         if cat.position != i:
             cat.position = i
             cat.save()
-    messages.success(request, _('The order of categories has been updated.'))
-    kwargs = {'event': request.event.slug}
-    if PRTX == 'pretix':
-        kwargs['organizer'] = request.organizer.slug
-    return reverse('plugins:prtx_faq:faq.category.list', kwargs=kwargs)
+    messages.success(request, _("The order of categories has been updated."))
+    kwargs = {"event": request.event.slug}
+    if PRTX == "pretix":
+        kwargs["organizer"] = request.organizer.slug
+    return reverse("plugins:prtx_faq:faq.category.list", kwargs=kwargs)
 
 
 @perm_annotation
 def faq_category_up(request, **kwargs):
-    return redirect(faq_category_move(request, kwargs.get('pk'), up=True))
+    return redirect(faq_category_move(request, kwargs.get("pk"), up=True))
 
 
 @perm_annotation
 def faq_category_down(request, **kwargs):
-    return redirect(faq_category_move(request, kwargs.get('pk'), up=False))
+    return redirect(faq_category_move(request, kwargs.get("pk"), up=False))

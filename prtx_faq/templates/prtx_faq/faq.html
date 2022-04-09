@@ -3,14 +3,18 @@
 {% load static %}
 <script src="{% static "prtx_faq/faq_search.js" %}"></script>
 
-<input id="faqSearch" class="form-control" type="text" placeholder="{% trans "Search" %}">
+<h2>{% trans "Frequently Asked Questions" %}</h2>
 
 <h2>{% trans "Frequently Asked Questions" %}</h2>
+<label for="faqSearch"><i class="fa fa-search"></i>
+  <input id="faqSearch" class="form-control" type="text" placeholder="{% trans "Search" %}">
+</label>
+
 <div id="faq-searchfor" class="faq-res hidden">{% trans "Results for" %}: <strong><span></span></strong></div>
 <div id="faq-result" class="faq-res hidden"><span></span> {% trans "Hits" %}</div>
 {% for category in categories %}
     {% if category.questions.exists %}
-        <details id="faq-category-{{ category.pk }}" class="panel panel-default card question-category" open>
+        <details id="faq-category-{{ category.pk }}" class="panel panel-default card question-category">
             <summary class="panel-heading card-header">
                 <h3 class="panel-title">
                   <strong>{{ category }}</strong>

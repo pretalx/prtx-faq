@@ -1,12 +1,30 @@
 $fa-var-caret-down: "\f0d7";
 $fa-var-caret-right: "\f0da";
 
-#faqSearch {
-    float: right;
-    width: 300px;
+label[for="faqSearch"] {
+    width: 100%;
+    margin: 1em 0 4em;
+    font-size: 20px;
+    i {
+      float: left;
+      width: 0;
+    }
+    i:before {
+      font-weight: 300;
+      position: relative;
+      top: .9em;
+      left: 1em;
+    }
 }
-
-.question {
+#faqSearch {
+    box-shadow: none;
+    border: none;
+    border-bottom: 1px solid;
+    padding-left: 4em;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 0;
+    height: 3em;
 }
 
 .panel {
@@ -33,3 +51,15 @@ $fa-var-caret-right: "\f0da";
         content: $fa-var-caret-down;
     }
 }
+details.panel.question-category {
+    margin: 0;
+    padding: 1em 0;
+    border: none;
+    border-top: 1px solid;
+    ul.list-group li {
+      .question-answered {
+        margin: 1em 0;
+      }
+    }
+ }
+

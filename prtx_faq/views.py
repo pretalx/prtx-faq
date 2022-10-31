@@ -36,7 +36,7 @@ else:
 
 
 class FAQView(TemplateView):
-    template_name = "prtx_faq/faq.{}.html".format(PRTX)
+    template_name = f"prtx_faq/faq.{PRTX}.html"
 
     def get_context_data(self, *args, **kwargs):
         ctx = super().get_context_data(*args, **kwargs)
@@ -49,7 +49,7 @@ class FAQView(TemplateView):
 class FAQList(PermMixin, ListView):
     model = FAQ
     context_object_name = "questions"
-    template_name = "prtx_faq/faq_list.{}.html".format(PRTX)
+    template_name = f"prtx_faq/faq_list.{PRTX}.html"
 
     def get_queryset(self):
         return FAQ.objects.filter(category__event=self.request.event).order_by(
@@ -58,7 +58,7 @@ class FAQList(PermMixin, ListView):
 
 
 class FAQCreate(PermMixin, FormView):
-    template_name = "prtx_faq/faq_create.{}.html".format(PRTX)
+    template_name = f"prtx_faq/faq_create.{PRTX}.html"
     form_class = FAQForm
 
     def get_success_url(self):
@@ -80,7 +80,7 @@ class FAQCreate(PermMixin, FormView):
 
 class FAQEdit(PermMixin, UpdateView):
     model = FAQ
-    template_name = "prtx_faq/faq_edit.{}.html".format(PRTX)
+    template_name = f"prtx_faq/faq_edit.{PRTX}.html"
     form_class = FAQForm
 
     def get_success_url(self):
@@ -98,7 +98,7 @@ class FAQEdit(PermMixin, UpdateView):
 
 class FAQDelete(PermMixin, DeleteView):
     model = FAQ
-    template_name = "prtx_faq/faq_delete.{}.html".format(PRTX)
+    template_name = f"prtx_faq/faq_delete.{PRTX}.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -154,14 +154,14 @@ def faq_down(request, **kwargs):
 class FAQCategoryList(PermMixin, ListView):
     model = FAQCategory
     context_object_name = "categories"
-    template_name = "prtx_faq/faq_category_list.{}.html".format(PRTX)
+    template_name = f"prtx_faq/faq_category_list.{PRTX}.html"
 
     def get_queryset(self):
         return self.request.event.faq_categories.all().order_by("position", "pk")
 
 
 class FAQCategoryCreate(PermMixin, FormView):
-    template_name = "prtx_faq/faq_category_create.{}.html".format(PRTX)
+    template_name = f"prtx_faq/faq_category_create.{PRTX}.html"
     form_class = FAQCategoryForm
 
     def form_valid(self, form):
@@ -183,7 +183,7 @@ class FAQCategoryCreate(PermMixin, FormView):
 
 class FAQCategoryEdit(PermMixin, UpdateView):
     model = FAQCategory
-    template_name = "prtx_faq/faq_category_edit.{}.html".format(PRTX)
+    template_name = f"prtx_faq/faq_category_edit.{PRTX}.html"
     form_class = FAQCategoryForm
 
     def get_success_url(self):
@@ -201,7 +201,7 @@ class FAQCategoryEdit(PermMixin, UpdateView):
 
 class FAQCategoryDelete(PermMixin, DeleteView):
     model = FAQCategory
-    template_name = "prtx_faq/faq_category_delete.{}.html".format(PRTX)
+    template_name = f"prtx_faq/faq_category_delete.{PRTX}.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

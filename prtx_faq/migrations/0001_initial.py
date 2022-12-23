@@ -8,7 +8,6 @@ from prtx_faq.prtx import PRTX
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [

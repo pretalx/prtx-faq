@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('prtx_faq', '0002_faq_hidden'),
+        ("prtx_faq", "0002_faq_hidden"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='faqcategory',
-            name='hidden',
+            model_name="faqcategory",
+            name="hidden",
             field=models.BooleanField(default=False),
         ),
     ]

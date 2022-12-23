@@ -20,7 +20,6 @@ if PRTX == "pretalx":
             }
         ]
 
-
 elif PRTX == "pretix":
     from pretix.control.signals import nav_event
 

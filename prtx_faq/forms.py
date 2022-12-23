@@ -48,7 +48,7 @@ class FAQForm(I18nModelForm):
 
     class Meta:
         model = FAQ
-        fields = ("category", "question", "answer", "tags", "hidden" )
+        fields = ("category", "question", "answer", "tags", "hidden")
         field_classes = {
             "category": SafeModelChoiceField,
         }

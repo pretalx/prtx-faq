@@ -24,4 +24,4 @@ class PluginApp(AppConfig):
         from . import signals  # NOQA
 
 
-default_app_config = 'prtx_faq.PluginApp'
+default_app_config = "prtx_faq.PluginApp"

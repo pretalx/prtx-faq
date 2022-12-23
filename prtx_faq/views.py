@@ -40,7 +40,11 @@ class FAQView(TemplateView):
 
     def get_context_data(self, *args, **kwargs):
         ctx = super().get_context_data(*args, **kwargs)
-        ctx["categories"] = self.request.event.faq_categories.filter(hidden=False).filter(questions__hidden=False).distinct()
+        ctx["categories"] = (
+            self.request.event.faq_categories.filter(hidden=False)
+            .filter(questions__hidden=False)
+            .distinct()
+        )
         ctx["event"] = self.request.event
         ctx["organizer"] = getattr(self.request, "organizer", None)
         return ctx

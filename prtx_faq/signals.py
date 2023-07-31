@@ -1,7 +1,6 @@
 from django.dispatch import receiver
 from django.urls import resolve, reverse
 from django.utils.translation import gettext_lazy as _
-
 from prtx_faq.prtx import PRTX
 
 if PRTX == "pretalx":

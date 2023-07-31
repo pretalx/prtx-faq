@@ -1,5 +1,4 @@
 from django.urls import re_path
-
 from prtx_faq.prtx import PRTX
 
 from . import views

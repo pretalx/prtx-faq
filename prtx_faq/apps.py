@@ -11,14 +11,14 @@ class PluginApp(AppConfig):
         author = "Tobias Kunze"
         description = gettext_lazy("An FAQ plugin for pretalx and pretix")
         visible = True
-        version = "1.0.2"
+        version = "1.0.3"
 
     class PretalxPluginMeta:
         name = gettext_lazy("Frequently Asked Questions")
         author = "Tobias Kunze"
         description = gettext_lazy("An FAQ plugin for pretalx and pretix")
         visible = True
-        version = "1.0.2"
+        version = "1.0.3"
 
     def ready(self):
         from . import signals  # NOQA

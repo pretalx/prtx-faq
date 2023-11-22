@@ -3,6 +3,7 @@
 import django.db.models.deletion
 import i18nfield.fields
 from django.db import migrations, models
+
 from prtx_faq.prtx import PRTX
 
 

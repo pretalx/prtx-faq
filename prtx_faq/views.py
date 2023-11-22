@@ -3,15 +3,18 @@ from django.http import Http404
 from django.shortcuts import redirect
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
-from django.views.generic import (DeleteView, FormView, ListView, TemplateView,
-                                  UpdateView)
+from django.views.generic import (
+    DeleteView, FormView, ListView, TemplateView, UpdateView,
+)
+
 from prtx_faq.forms import FAQCategoryForm, FAQForm
 from prtx_faq.models import FAQ, FAQCategory
 from prtx_faq.prtx import PRTX
 
 if PRTX == "pretix":
-    from pretix.control.permissions import (EventPermissionRequiredMixin,
-                                            event_permission_required)
+    from pretix.control.permissions import (
+        EventPermissionRequiredMixin, event_permission_required,
+    )
 
     class PermMixin(EventPermissionRequiredMixin):
         permission = "can_change_event_settings"

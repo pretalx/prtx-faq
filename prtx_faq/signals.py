@@ -24,6 +24,10 @@ elif PRTX == "pretix":
 
     @receiver(nav_event, dispatch_uid="faq_nav_entry")
     def navbar_info(sender, request, **kwargs):
+        if not request.user.has_event_permission(
+            request.organizer, request.event, "can_change_orders"
+        ):
+            return []
         url = resolve(request.path_info)
         kwargs = {
             "event": request.event.slug,

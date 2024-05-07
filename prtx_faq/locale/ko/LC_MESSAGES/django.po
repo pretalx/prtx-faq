@@ -17,7 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
 #: local/prtx-faq/prtx_faq/apps.py:10 local/prtx-faq/prtx_faq/apps.py:17
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq.html:6
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq.html:8

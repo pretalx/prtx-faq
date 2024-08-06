@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-02 19:19+0000\n"
+"POT-Creation-Date: 2024-08-06 12:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: local/prtx-faq/prtx_faq/apps.py:10 local/prtx-faq/prtx_faq/apps.py:17
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq.html:6
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq.html:8
@@ -27,15 +28,15 @@ msgstr ""
 msgid "An FAQ plugin for pretalx and pretix"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/models.py:14
+#: local/prtx-faq/prtx_faq/models.py:15
 msgid "Name"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/models.py:15 local/prtx-faq/prtx_faq/models.py:51
+#: local/prtx-faq/prtx_faq/models.py:16 local/prtx-faq/prtx_faq/models.py:52
 msgid "Position"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/models.py:38
+#: local/prtx-faq/prtx_faq/models.py:39
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_list.pretalx.html:13
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_list.pretix.html:16
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretalx.html:17
@@ -43,29 +44,29 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/models.py:40
+#: local/prtx-faq/prtx_faq/models.py:41
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretalx.html:16
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_list.pretix.html:15
 msgid "Question"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/models.py:41
+#: local/prtx-faq/prtx_faq/models.py:42
 msgid "Answer"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/models.py:46
+#: local/prtx-faq/prtx_faq/models.py:47
 msgid "Tags"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/signals.py:15 local/prtx-faq/prtx_faq/signals.py:34
+#: local/prtx-faq/prtx_faq/signals.py:16 local/prtx-faq/prtx_faq/signals.py:39
 msgid "FAQ"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/signals.py:40
+#: local/prtx-faq/prtx_faq/signals.py:45
 msgid "Categories"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/signals.py:48
+#: local/prtx-faq/prtx_faq/signals.py:53
 msgid "Questions"
 msgstr ""
 
@@ -168,42 +169,42 @@ msgstr ""
 msgid "FAQ Questions"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/views.py:69
+#: local/prtx-faq/prtx_faq/views.py:72
 msgid "Question created!"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/views.py:91
+#: local/prtx-faq/prtx_faq/views.py:94
 msgid "Question saved!"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/views.py:115
+#: local/prtx-faq/prtx_faq/views.py:118
 msgid "Question deleted!"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/views.py:123
+#: local/prtx-faq/prtx_faq/views.py:126
 msgid "The selected question does not exist."
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/views.py:138
+#: local/prtx-faq/prtx_faq/views.py:141
 msgid "The order of questions has been updated."
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/views.py:176
+#: local/prtx-faq/prtx_faq/views.py:179
 msgid "Category created!"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/views.py:194
+#: local/prtx-faq/prtx_faq/views.py:197
 msgid "Category saved!"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/views.py:218
+#: local/prtx-faq/prtx_faq/views.py:221
 msgid "Category deleted!"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/views.py:226
+#: local/prtx-faq/prtx_faq/views.py:229
 msgid "The selected category does not exist."
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/views.py:245
+#: local/prtx-faq/prtx_faq/views.py:248
 msgid "The order of categories has been updated."
 msgstr ""

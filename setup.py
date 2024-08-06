@@ -24,7 +24,7 @@ cmdclass = {"build": CustomBuild}
 
 setup(
     name="prtx-faq",
-    version="1.0.3",
+    version="1.1.0",
     description="An FAQ plugin for pretalx and pretix",
     long_description=long_description,
     url="https://github.com/pretalx/prtx-faq",

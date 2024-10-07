@@ -45,10 +45,10 @@ label[for="faqSearch"] {
 }
 .question-category {
     summary .fa::before {
-        content: $fa-var-caret-right;
+        content: "\f0da";
     }
     &[open] summary .fa::before {
-        content: $fa-var-caret-down;
+        content: "\f0d7";
     }
 }
 details.panel.question-category {

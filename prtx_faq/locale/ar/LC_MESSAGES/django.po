@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-06 12:08+0000\n"
+"POT-Creation-Date: 2024-10-12 00:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,8 +16,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
-"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
 #: local/prtx-faq/prtx_faq/apps.py:10 local/prtx-faq/prtx_faq/apps.py:17
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq.html:6
@@ -83,23 +82,19 @@ msgstr ""
 msgid "Hits"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretalx.html:6
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretalx.html:5
 msgid "New Category"
-msgstr ""
-
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretalx.html:10
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretix.html:12
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretalx.html:10
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretix.html:12
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretalx.html:10
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretix.html:12
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretalx.html:10
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretix.html:12
-msgid "Save"
 msgstr ""
 
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretix.html:6
 msgid "New FAQ category"
+msgstr ""
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretix.html:12
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretix.html:12
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretix.html:12
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretix.html:12
+msgid "Save"
 msgstr ""
 
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_delete.html:2
@@ -117,8 +112,8 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretalx.html:6
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretalx.html:6
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretalx.html:5
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretalx.html:5
 msgid "Update Category"
 msgstr ""
 
@@ -135,7 +130,7 @@ msgstr ""
 msgid "FAQ categories"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretalx.html:6
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretalx.html:5
 msgid "New Question"
 msgstr ""
 

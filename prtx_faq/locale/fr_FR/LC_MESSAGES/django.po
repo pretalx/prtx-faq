@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-06 12:08+0000\n"
+"POT-Creation-Date: 2024-10-12 00:15+0000\n"
 "PO-Revision-Date: 2020-07-30 19:38+0200\n"
 "Last-Translator: Stéphane Parunakian <parunakian.stephane@gmail.com>\n"
 "Language-Team: \n"
@@ -81,24 +81,20 @@ msgstr ""
 msgid "Hits"
 msgstr ""
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretalx.html:6
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretalx.html:5
 msgid "New Category"
 msgstr "Nouvelle catégorie"
-
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretalx.html:10
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretix.html:12
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretalx.html:10
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretix.html:12
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretalx.html:10
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretix.html:12
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretalx.html:10
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretix.html:12
-msgid "Save"
-msgstr "Sauver"
 
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretix.html:6
 msgid "New FAQ category"
 msgstr "Nouvelle catégorie de la FAQ"
+
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_create.pretix.html:12
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretix.html:12
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretix.html:12
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretix.html:12
+msgid "Save"
+msgstr "Sauver"
 
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_delete.html:2
 msgid "Delete category?"
@@ -109,16 +105,16 @@ msgstr "Supprimer la catégorie ?"
 msgid ""
 "Are you sure you want to delete the category <strong>%(category)s</strong>?"
 msgstr ""
-"Êtes-vous sûr de vouloir supprimer la catégorie <strong>%(category)s</"
-"strong> ?"
+"Êtes-vous sûr de vouloir supprimer la catégorie "
+"<strong>%(category)s</strong> ?"
 
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_delete.html:8
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_delete.html:8
 msgid "Delete"
 msgstr "Supprimer"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretalx.html:6
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretalx.html:6
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_category_edit.pretalx.html:5
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretalx.html:5
 msgid "Update Category"
 msgstr "Mettre à jour la catégorie"
 
@@ -135,7 +131,7 @@ msgstr "Ajouter une catégorie"
 msgid "FAQ categories"
 msgstr "Catégories de la FAQ"
 
-#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretalx.html:6
+#: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_create.pretalx.html:5
 msgid "New Question"
 msgstr "Nouvelle question"
 
@@ -152,8 +148,8 @@ msgstr "Supprimer la question ?"
 msgid ""
 "Are you sure you want to delete the question <strong>%(question)s</strong>?"
 msgstr ""
-"Êtes-vous sûr de vouloir supprimer la question <strong>%(question)s</"
-"strong> ?"
+"Êtes-vous sûr de vouloir supprimer la question <strong>%(question)s</strong>"
+" ?"
 
 #: local/prtx-faq/prtx_faq/templates/prtx_faq/faq_edit.pretix.html:6
 msgid "Update Question"

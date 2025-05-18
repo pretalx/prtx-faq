@@ -24,7 +24,7 @@ else:
     from pretalx.common.views.mixins import PermissionRequired
 
     class PermMixin(PermissionRequired):
-        permission_required = "orga.change_settings"
+        permission_required = "event.update_event"
 
         def get_permission_object(self):
             return self.request.event

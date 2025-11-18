@@ -1,0 +1,45 @@
+[project]
+name = "prtx-faq"
+dynamic = ["version"]
+description = "An FAQ plugin for pretalx and pretix"
+readme = "README.rst"
+license = {text = "Apache Software License"}
+keywords = ["pretix", "pretalx"]
+authors = [
+    {name = "Tobias Kunze", email = "r@rixx.de"},
+]
+maintainers = [
+    {name = "Tobias Kunze", email = "r@rixx.de"},
+]
+
+dependencies = [
+]
+
+[project.entry-points."pretix.plugin"]
+prtx_faq = "prtx_faq:PretixPluginMeta"
+
+[project.entry-points."pretalx.plugin"]
+prtx_faq = "prtx_faq:PretalxPluginMeta"
+
+[project.entry-points."distutils.commands"]
+build = "pretix_plugin_build.build:CustomBuild"
+
+[build-system]
+requires = [
+    "setuptools",
+    "pretix-plugin-build",
+]
+
+[project.urls]
+homepage = "https://github.com/pretalx/prtx-faq"
+repository = "https://github.com/pretalx/prtx-faq"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.dynamic]
+version = {attr = "prtx_faq.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["prtx_faq*"]
+namespaces = false

@@ -1,11 +1,8 @@
 {% extends "agenda/base.html" %}
-{% load compress %}
 {% load static %}
 {% block extra_title %}FAQ{% endblock %}
 {% block custom_header %}
-    {% compress css %}
-        <link type="text/css" rel="stylesheet" href="{% static "prtx_faq/main.css" %}" />
-    {% endcompress %}
+    <link type="text/css" rel="stylesheet" href="{% static "prtx_faq/main.css" %}" />
 {% endblock %}
 {% block content %}
     {% include "prtx_faq/faq.html" %}

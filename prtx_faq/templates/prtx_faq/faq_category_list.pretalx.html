@@ -3,7 +3,7 @@
 
 {% block content %}
     <div>
-        <a class="btn btn-success ml-auto" href="{% url "plugins:prtx_faq:faq.category.create" event=request.event.slug %}">
+        <a class="btn btn-success ml-auto" href="{% url 'plugins:prtx_faq:faq.category.create' event=request.event.slug %}">
             {% trans "Add category" %}
         </a>
         <p class="clearfix"></p>

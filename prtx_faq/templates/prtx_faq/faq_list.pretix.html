@@ -5,7 +5,7 @@
     <h1>{% trans "FAQ Questions" %}</h1>
     <div class="float-left">
         <p class="clearfix"></p>
-        <a class="btn btn-default ml-auto" href="{% url "plugins:prtx_faq:faq.create" event=request.event.slug organizer=request.organizer.slug %}">
+        <a class="btn btn-default ml-auto" href="{% url 'plugins:prtx_faq:faq.create' event=request.event.slug organizer=request.organizer.slug %}">
             <span class="fa fa-plus"></span>
             {% trans "Add question" %}
         </a>

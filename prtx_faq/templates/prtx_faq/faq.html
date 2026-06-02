@@ -1,13 +1,13 @@
 {% load i18n %}
 {% load rich_text %}
 {% load static %}
-<script src="{% static "prtx_faq/faq_search.js" %}"></script>
+<script src="{% static 'prtx_faq/faq_search.js' %}"></script>
 
 <h2>{% trans "Frequently Asked Questions" %}</h2>
 
 <h2>{% trans "Frequently Asked Questions" %}</h2>
 <label for="faqSearch"><i class="fa fa-search"></i>
-    <input id="faqSearch" class="form-control" type="text" placeholder="{% trans "Search" %}">
+    <input id="faqSearch" class="form-control" type="text" placeholder="{% trans 'Search' %}">
 </label>
 
 <div id="faq-searchfor" class="faq-res hidden">{% trans "Results for" %}: <strong><span></span></strong></div>

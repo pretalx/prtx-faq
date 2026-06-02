@@ -161,7 +161,7 @@ class FAQCategoryList(PermMixin, ListView):
     template_name = f"prtx_faq/faq_category_list.{PRTX}.html"
 
     def get_queryset(self):
-        return self.request.event.faq_categories.all().order_by("position", "pk")
+        return self.request.event.faq_categories.order_by("position", "pk")
 
 
 class FAQCategoryCreate(PermMixin, FormView):

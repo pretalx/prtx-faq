@@ -19,6 +19,7 @@ class PluginApp(AppConfig):
         description = gettext_lazy("An FAQ plugin for pretalx and pretix")
         visible = True
         version = "1.2.0"
+        navigation_links = [(gettext_lazy("FAQ"), "plugins:prtx_faq:faq.list", {})]
 
     def ready(self):
         from . import signals  # NOQA
